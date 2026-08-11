@@ -2,459 +2,573 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta property="og:image" content="https://gisyayuna0-blip.github.io/undangan_ultah_online/ultah.jpg">
-<title>Azka & Kirana Wedding</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+ <meta property="og:image" content="https://gisyayuna0-blip.github.io/undangan_ultah_online/ultah.jpg">
+<title>🎂 Happy Birthday Alana Xiera!</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/lucide@latest"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script>
-tailwind.config={theme:{extend:{fontFamily:{script:['"Great Vibes"','cursive'],serif:['"Cormorant Garamond"','serif'],sans:['"Montserrat"','sans-serif']},colors:{rose:{50:'#fff5f7',100:'#ffe0e6',200:'#ffb3c1',300:'#ff8fa3',400:'#ff758f',500:'#ff4d6d',600:'#c9184a',700:'#a4133c',800:'#800f2f',900:'#590d22'},gold:{50:'#fdf9ef',100:'#f9f0d4',200:'#f2dea6',300:'#e9c96e',400:'#dfb44a',500:'#c9952c',600:'#a67620',700:'#7d5a18',800:'#5c4214',900:'#3d2c0e'},cream:'#fdf8f4'}}}}
+tailwind.config={theme:{extend:{colors:{blush:'#f8a4c8',lavender:'#c9a4e8',mint:'#a4d8c8',cream:'#fff5f8',rosegold:'#d4a574',deeprose:'#c05070',gold:'#f0c860',peach:'#f8c8a4',sky:'#a4c8f0'},fontFamily:{script:['"Dancing Script"','cursive'],display:['"Playfair Display"','serif'],body:['"Poppins"','sans-serif']}}}}
 </script>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth;overflow-x:hidden}
-body{font-family:'Montserrat',sans-serif;overflow-x:hidden;background:#1a0a10}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;overflow:hidden;background:#fff5f8;-webkit-tap-highlight-color:transparent}
 
-#cover{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:#0d0508;transition:opacity 1.2s ease,visibility 1.2s ease}
-#cover.hide-cover{opacity:0;visibility:hidden;pointer-events:none}
-.cover-bg{position:absolute;inset:0;overflow:hidden}
-.cover-bg img{width:100%;height:100%;object-fit:cover;object-position:center center}
-.cover-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,3,10,0.3) 0%,rgba(15,3,10,0.1) 35%,rgba(15,3,10,0.2) 65%,rgba(15,3,10,0.55) 100%)}
-.cover-content{position:relative;z-index:10;text-align:center;width:100%;padding:24px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%}
+.slide{position:absolute;inset:0;opacity:0;transform:scale(.96) translateY(10px);transition:all .8s cubic-bezier(.4,0,.2,1);pointer-events:none;overflow-y:auto;overflow-x:hidden}
+.slide.active{opacity:1;transform:scale(1) translateY(0);pointer-events:auto}
+.slide::-webkit-scrollbar{width:3px}
+.slide::-webkit-scrollbar-thumb{background:rgba(248,164,200,.3);border-radius:2px}
 
-.door-wrap{position:fixed;inset:0;z-index:9998;pointer-events:none;display:flex}
-.door-l,.door-r{position:absolute;top:0;width:50%;height:100%;transition:transform 1.6s cubic-bezier(.77,0,.175,1)}
-.door-l{left:0;transform-origin:left;background:linear-gradient(135deg,#2a0f1a,#1a0a10 60%,#2a0f1a);border-right:1.5px solid rgba(201,149,44,0.2);display:flex;align-items:center;justify-content:flex-end;padding-right:18px}
-.door-r{right:0;transform-origin:right;background:linear-gradient(225deg,#2a0f1a,#1a0a10 60%,#2a0f1a);border-left:1.5px solid rgba(201,149,44,0.2);display:flex;align-items:center;justify-content:flex-start;padding-left:18px}
-.door-l::after,.door-r::after{content:'';width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,#e9c96e,#c9952c);box-shadow:0 0 12px rgba(201,149,44,0.4)}
-.door-open .door-l{transform:perspective(1200px) rotateY(-105deg)}
-.door-open .door-r{transform:perspective(1200px) rotateY(105deg)}
-.door-wrap.gone{opacity:0;transition:opacity .4s ease .3s;pointer-events:none}
+/* ===== PHOTO BACKGROUNDS ===== */
+.slide-bg-photo{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;background-repeat:no-repeat}
+.slide-bg-photo.dark-overlay::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,15,20,.38) 0%,rgba(50,25,35,.48) 40%,rgba(60,30,40,.58) 100%);z-index:1}
+.slide-bg-photo.light-overlay::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,245,248,.55) 0%,rgba(255,240,245,.65) 50%,rgba(248,235,242,.7) 100%);z-index:1}
 
-.petal{position:fixed;z-index:9990;pointer-events:none;will-change:transform,opacity}
-@keyframes pFall{0%{transform:translateY(-5vh) rotate(0) translateX(0);opacity:0}8%{opacity:.9}88%{opacity:.7}100%{transform:translateY(108vh) rotate(540deg) translateX(var(--dx));opacity:0}}
+/* Petals for slide 1 */
+.petal{position:absolute;z-index:2;pointer-events:none;opacity:.5}
+.petal svg{animation:petalDrift var(--dur,6s) ease-in-out infinite var(--del,0s)}
+@keyframes petalDrift{0%{transform:translateY(0) translateX(0) rotate(0deg);opacity:.5}25%{transform:translateY(-20px) translateX(8px) rotate(45deg);opacity:.6}50%{transform:translateY(-10px) translateX(-5px) rotate(90deg);opacity:.4}75%{transform:translateY(-30px) translateX(10px) rotate(135deg);opacity:.5}100%{transform:translateY(0) translateX(0) rotate(360deg);opacity:.5}}
 
-@keyframes gPulse{0%,100%{text-shadow:0 0 15px rgba(255,182,193,.35),0 0 35px rgba(255,182,193,.15),0 0 55px rgba(201,149,44,.1)}50%{text-shadow:0 0 25px rgba(255,182,193,.55),0 0 50px rgba(255,182,193,.25),0 0 80px rgba(201,149,44,.2)}}
-.glow{animation:gPulse 3s ease-in-out infinite}
+.slide>*:not(.slide-bg-photo):not(.petal){position:relative;z-index:3}
 
-.pg{position:relative;width:100%;min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.pg .bg{position:absolute;inset:0;z-index:0}
-.pg .bg img{width:100%;height:100%;object-fit:cover;display:block}
-.pg .bg::after{content:'';position:absolute;inset:0;background:rgba(253,248,244,.83)}
-.pg .ct{position:relative;z-index:1;width:100%;padding:40px 22px}
+/* ===== FRAME ===== */
+.frame{position:absolute;inset:12px;pointer-events:none;z-index:4;border:2px solid transparent;border-radius:16px}
+.frame-inner{position:absolute;inset:5px;border:1px solid rgba(248,164,200,.2);border-radius:12px}
+.frame .c{position:absolute;width:28px;height:28px}
+.frame .c::before,.frame .c::after{content:'';position:absolute;background:linear-gradient(135deg,#f8a4c8,#f0c860);border-radius:2px}
+.frame .c::before{width:100%;height:2.5px}
+.frame .c::after{width:2.5px;height:100%}
+.frame .c.tl{top:0;left:0}.frame .c.tr{top:0;right:0}.frame .c.bl{bottom:0;left:0}.frame .c.br{bottom:0;right:0}
+.frame .c.tr::before{right:0}.frame .c.tr::after{right:0}
+.frame .c.bl::before{bottom:0}.frame .c.bl::after{bottom:0}
+.frame .c.br::before{right:0;bottom:0}.frame .c.br::after{right:0;bottom:0}
+.frame .fd{position:absolute;width:4px;height:4px;border-radius:50%;background:rgba(248,164,200,.3)}
+.frame .fd.t{top:-2px;left:50%;transform:translateX(-50%)}
+.frame .fd.b{bottom:-2px;left:50%;transform:translateX(-50%)}
+.frame .fd.l{left:-2px;top:50%;transform:translateY(-50%)}
+.frame .fd.r{right:-2px;top:50%;transform:translateY(-50%)}
+.frame-gold .c::before,.frame-gold .c::after{background:linear-gradient(135deg,#f0c860,#f8dca0)!important}
+.frame-gold .frame-inner{border-color:rgba(240,200,96,.3)}
+.frame-gold .fd{background:rgba(240,200,96,.5)}
+@keyframes frameGlow{0%,100%{border-color:rgba(248,164,200,.15)}50%{border-color:rgba(248,164,200,.3)}}
+@keyframes frameGlowGold{0%,100%{border-color:rgba(240,200,96,.15)}50%{border-color:rgba(240,200,96,.35)}}
+.frame-gold{animation:frameGlowGold 3s ease-in-out infinite}
 
-.rv{opacity:0;transform:translateY(35px);transition:opacity .7s ease,transform .7s ease}
-.rv.v{opacity:1;transform:translateY(0)}
-.rvl{opacity:0;transform:translateX(-35px);transition:opacity .7s ease,transform .7s ease}
-.rvl.v{opacity:1;transform:translateX(0)}
-.rvr{opacity:0;transform:translateX(35px);transition:opacity .7s ease,transform .7s ease}
-.rvr.v{opacity:1;transform:translateX(0)}
-.rvs{opacity:0;transform:scale(.88);transition:opacity .7s ease,transform .7s ease}
-.rvs.v{opacity:1;transform:scale(1)}
+/* ===== NAV ===== */
+.nav-bar{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:center;gap:14px;padding:10px 16px;background:rgba(255,245,248,.92);backdrop-filter:blur(12px);border-top:1px solid rgba(248,164,200,.15);opacity:0;transform:translateY(20px);transition:all .5s ease}
+.nav-bar.visible{opacity:1;transform:translateY(0)}
+.nav-btn{width:38px;height:38px;border-radius:50%;border:none;background:linear-gradient(135deg,#f8a4c8,#f0c860);color:#fff;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;box-shadow:0 2px 10px rgba(248,164,200,.3)}
+.nav-btn:hover{transform:scale(1.1);box-shadow:0 4px 15px rgba(248,164,200,.5)}
+.nav-btn:disabled{opacity:.25;cursor:not-allowed;transform:none!important}
+.dots{display:flex;gap:5px}
+.dot{width:7px;height:7px;border-radius:50%;background:rgba(248,164,200,.25);cursor:pointer;transition:all .3s;border:none;padding:0}
+.dot.active{background:linear-gradient(135deg,#f8a4c8,#f0c860);width:20px;border-radius:4px}
 
-.rsvp-btn{position:relative;overflow:hidden;transition:all .4s cubic-bezier(.175,.885,.32,1.275)}
-.rsvp-btn::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:rgba(255,255,255,.18);transform:translate(-50%,-50%);transition:width .5s,height .5s}
-.rsvp-btn:hover::before,.rsvp-btn:active::before{width:300px;height:300px}
-.rsvp-btn:hover,.rsvp-btn:active{transform:translateY(-2px) scale(1.04);box-shadow:0 12px 35px rgba(201,149,44,.35)}
 
-.cd-box{background:linear-gradient(135deg,rgba(255,255,255,.92),rgba(255,240,245,.92));backdrop-filter:blur(8px);border:1px solid rgba(201,149,44,.18);border-radius:14px;padding:16px 12px;min-width:70px;text-align:center;box-shadow:0 6px 24px rgba(0,0,0,.06)}
-.cd-n{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:#a4133c;line-height:1}
-.cd-l{font-size:.58rem;text-transform:uppercase;letter-spacing:1.8px;color:#c9952c;margin-top:3px;font-weight:500}
+/* ===== ENVELOPE ===== */
+.envelope-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;perspective:1200px;padding:40px 20px 80px}
+.envelope{width:300px;height:200px;position:relative;cursor:pointer}
+.env-body{position:absolute;inset:0;background:linear-gradient(145deg,#f5d5e0,#f5dce0);border-radius:10px;z-index:1;box-shadow:0 15px 40px rgba(180,100,140,.22),inset 0 1px 0 rgba(255,255,255,.5)}
+.env-body::after{content:'';position:absolute;inset:8px;border:1.5px dashed rgba(200,140,170,.35);border-radius:6px}
+.env-bottom{position:absolute;bottom:0;left:0;width:100%;height:60%;clip-path:polygon(0 100%,50% 0,100% 100%);background:linear-gradient(0deg,#f2c8d8,#f0c8d0);z-index:2}
+.env-flap{position:absolute;top:0;left:0;width:100%;height:55%;clip-path:polygon(0 0,50% 100%,100% 0);background:linear-gradient(180deg,#f2c0d5,#eab0c8);transform-origin:top center;z-index:4;transition:transform 1s cubic-bezier(.4,0,.2,1)}
+.envelope.opened .env-flap{transform:rotateX(180deg)}
+.env-card{position:absolute;top:15%;left:12%;width:76%;height:65%;background:#fff;border-radius:6px;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.06);transition:transform 1.2s cubic-bezier(.22,1,.36,1) .4s}
+.envelope.opened .env-card{transform:translateY(-150px) scale(1.08)}
+.wax-seal{position:absolute;top:42%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f8c878,#e8a830,#c08020);display:flex;align-items:center;justify-content:center;z-index:5;cursor:pointer;box-shadow:0 4px 15px rgba(180,120,20,.3),inset 0 1px 2px rgba(255,255,255,.25);transition:all .6s cubic-bezier(.4,0,.2,1);animation:sealPulse 2s ease-in-out infinite}
+.wax-seal::after{content:'';position:absolute;inset:3px;border-radius:50%;border:1.5px solid rgba(255,255,255,.2)}
+.envelope.opened .wax-seal{transform:translate(-50%,-50%) scale(0) rotate(180deg);opacity:0;pointer-events:none}
+@keyframes sealPulse{0%,100%{box-shadow:0 4px 15px rgba(180,120,20,.3),0 0 0 0 rgba(248,200,120,.4)}50%{box-shadow:0 4px 15px rgba(180,120,20,.3),0 0 0 10px rgba(248,200,120,0)}}
+.tap-hint{margin-top:24px;font-size:13px;color:rgba(255,255,255,.85);animation:tapBounce 1.5s ease-in-out infinite;transition:all .5s;text-shadow:0 1px 4px rgba(0,0,0,.3)}
+.tap-hint.hide{opacity:0;transform:translateY(10px);pointer-events:none}
+@keyframes tapBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 
-.m-btn{position:fixed;bottom:16px;right:16px;z-index:9980;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#a4133c,#c9184a);border:1.5px solid rgba(201,149,44,.45);color:#e9c96e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 3px 16px rgba(0,0,0,.3);transition:all .3s ease;opacity:0;transform:scale(0)}
-.m-btn.show{opacity:1;transform:scale(1)}
-.m-btn:hover{transform:scale(1.1)}
-.m-btn.on{animation:mPulse 1.5s ease-in-out infinite}
-@keyframes mPulse{0%,100%{box-shadow:0 3px 16px rgba(0,0,0,.3)}50%{box-shadow:0 3px 24px rgba(169,19,60,.5),0 0 0 6px rgba(169,19,60,.08)}}
+.poetic-intro{max-width:280px;text-align:center;opacity:0;transform:translateY(15px);transition:all 1s ease}
+.poetic-intro.show{opacity:1;transform:translateY(0)}
+.poetic-line{display:block;font-family:'Playfair Display',serif;font-style:italic;font-size:12.5px;color:rgba(255,255,255,.9);line-height:1.9;opacity:0;transform:translateY(8px);transition:all .6s ease;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+.poetic-intro.show .poetic-line{opacity:1;transform:translateY(0)}
+.poetic-intro.show .poetic-line:nth-child(1){transition-delay:2.4s}
+.poetic-intro.show .poetic-line:nth-child(2){transition-delay:2.8s}
+.poetic-intro.show .poetic-line:nth-child(3){transition-delay:3.2s}
+.poetic-intro.show .poetic-line:nth-child(4){transition-delay:3.6s}
+.poetic-intro.show .poetic-line:nth-child(5){transition-delay:4.0s}
 
-.tl-line{position:absolute;left:16px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,transparent,#e9c96e,#ff8fa3,#e9c96e,transparent)}
-.tl-dot{width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,#e9c96e,#c9952c);border:2.5px solid #fdf8f4;box-shadow:0 0 0 2.5px rgba(201,149,44,.25);position:absolute;left:10px;z-index:2}
+/* ===== ANIMATIONS ===== */
+.rf{position:absolute;border-radius:20px;opacity:.35;pointer-events:none;animation:ribbonDrift var(--dur,4s) ease-in-out infinite var(--del,0s)}
+@keyframes ribbonDrift{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(var(--dy,-12px)) rotate(var(--r,0deg))}}
+.sparkle{position:absolute;width:5px;height:5px;border-radius:50%;pointer-events:none;animation:sparkle var(--dur,2s) ease-in-out infinite var(--del,0s)}
+@keyframes sparkle{0%,100%{opacity:0;transform:scale(0)}50%{opacity:1;transform:scale(1)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes floatSlow{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-10px) rotate(5deg)}}
+@keyframes sway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+@keyframes twinkle{0%,100%{opacity:.2;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+@keyframes pinBounce{0%,100%{transform:translateY(0)}40%{transform:translateY(-14px)}60%{transform:translateY(-6px)}}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes heartFloat{0%{transform:translateY(0) scale(1);opacity:.7}50%{transform:translateY(-25px) scale(1.1);opacity:1}100%{transform:translateY(-55px) scale(.7);opacity:0}}
+@keyframes balloonFloat{0%{transform:translateY(0) translateX(0) rotate(0deg)}25%{transform:translateY(-15px) translateX(5px) rotate(3deg)}50%{transform:translateY(-28px) translateX(-4px) rotate(-2deg)}75%{transform:translateY(-40px) translateX(6px) rotate(4deg)}100%{transform:translateY(-55px) translateX(0) rotate(0deg)}}
+@keyframes confettiFall{0%{transform:translateY(-10px) rotate(0deg);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+@keyframes swingHanger{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 5px rgba(248,164,200,.3)}50%{box-shadow:0 0 20px rgba(248,164,200,.6)}}
+@keyframes cakeGlow{0%,100%{filter:drop-shadow(0 0 4px rgba(240,200,96,.3))}50%{filter:drop-shadow(0 0 12px rgba(240,200,96,.6))}}
+@keyframes candleFlame{0%,100%{transform:scaleY(1) scaleX(1);opacity:1}25%{transform:scaleY(1.1) scaleX(.9)}50%{transform:scaleY(.9) scaleX(1.1);opacity:.8}75%{transform:scaleY(1.05) scaleX(.95)}}
+@keyframes presentBounce{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-8px) rotate(2deg)}}
+@keyframes gentleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes tapeSway{0%,100%{transform:translateX(-50%) rotate(var(--tr,0deg))}50%{transform:translateX(-50%) rotate(calc(var(--tr,0deg) + 1deg))}}
+@keyframes angpauGlow{0%,100%{box-shadow:0 0 8px rgba(240,200,96,.2)}50%{box-shadow:0 0 20px rgba(240,200,96,.5)}}
+@keyframes coinFloat{0%{transform:translateY(0) rotate(0deg);opacity:.6}50%{transform:translateY(-20px) rotate(180deg);opacity:.8}100%{transform:translateY(-40px) rotate(360deg);opacity:0}}
 
-.gal{overflow:hidden;border-radius:10px;position:relative}
-.gal img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;display:block}
-.gal:active img{transform:scale(1.06)}
+.anim{opacity:0}.slide.active .anim{animation:fadeInUp .6s ease forwards}
+.slide.active .anim:nth-child(1){animation-delay:.1s}
+.slide.active .anim:nth-child(2){animation-delay:.2s}
+.slide.active .anim:nth-child(3){animation-delay:.3s}
+.slide.active .anim:nth-child(4){animation-delay:.4s}
+.slide.active .anim:nth-child(5){animation-delay:.5s}
+.slide.active .anim:nth-child(6){animation-delay:.6s}
+.slide.active .anim:nth-child(7){animation-delay:.7s}
+.slide.active .anim:nth-child(8){animation-delay:.8s}
+.slide.active .anim:nth-child(9){animation-delay:.9s}
+.slide.active .anim:nth-child(10){animation-delay:1s}
+.slide.active .anim:nth-child(11){animation-delay:1.1s}
+.slide.active .anim:nth-child(12){animation-delay:1.2s}
 
-.sep{display:flex;align-items:center;justify-content:center;gap:10px;opacity:.55}
-.sep .ln{width:50px;height:1px;background:linear-gradient(to right,transparent,#c9952c,transparent)}
+.bow{position:relative;display:inline-block;vertical-align:middle}
+.bow::before,.bow::after{content:'';position:absolute;top:50%;width:26px;height:20px;border-radius:50% 50% 10% 10%;transform:translateY(-50%)}
+.bow::before{left:-22px;background:linear-gradient(135deg,#f8a4c8,#e88ab8);transform:translateY(-50%) rotate(-15deg)}
+.bow::after{right:-22px;background:linear-gradient(225deg,#f8a4c8,#e88ab8);transform:translateY(-50%) rotate(15deg)}
+.bow-c{width:11px;height:11px;border-radius:50%;background:linear-gradient(135deg,#f090b0,#d870a0);position:relative;z-index:2;box-shadow:0 2px 4px rgba(200,100,140,.3);display:block}
 
-.wa-btn{background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;transition:all .3s ease;box-shadow:0 4px 14px rgba(37,211,102,.25)}
-.wa-btn:hover,.wa-btn:active{transform:translateY(-2px);box-shadow:0 7px 22px rgba(37,211,102,.35)}
+.tl-item{position:relative;padding-left:32px;padding-bottom:20px;border-left:2px solid rgba(248,164,200,.25);margin-left:6px}
+.tl-item:last-child{border-left-color:transparent}
+.tl-dot{position:absolute;left:-7px;top:3px;width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,#f8a4c8,#f0c860);box-shadow:0 0 0 3px rgba(248,164,200,.15)}
 
-.toast{position:fixed;bottom:70px;left:50%;transform:translateX(-50%) translateY(90px);z-index:99999;background:#1a0a10;color:#e9c96e;padding:12px 24px;border-radius:10px;font-size:.78rem;border:1px solid rgba(201,149,44,.25);box-shadow:0 8px 30px rgba(0,0,0,.4);transition:transform .4s cubic-bezier(.175,.885,.32,1.275);white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis}
+.polaroid{background:#fff;padding:10px 10px 38px 10px;box-shadow:0 6px 25px rgba(180,100,140,.15),0 2px 8px rgba(0,0,0,.06);position:relative;transition:all .4s ease;cursor:pointer;width:100%}
+.polaroid:hover{transform:scale(1.05) rotate(0deg)!important;box-shadow:0 12px 35px rgba(180,100,140,.25)}
+.polaroid img{width:100%;height:100%;object-fit:cover;display:block}
+.polaroid-label{position:absolute;bottom:9px;left:0;right:0;text-align:center;font-family:'Dancing Script',cursive;font-size:13px;color:#8a6a8c}
+.tape{position:absolute;width:50px;height:18px;top:-8px;left:50%;transform:translateX(-50%) rotate(var(--tr,0deg));background:rgba(248,200,120,.45);border-radius:1px;z-index:3;animation:tapeSway 3s ease-in-out infinite}
+.tape::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 3px,rgba(255,255,255,.15) 3px,rgba(255,255,255,.15) 6px);border-radius:1px}
+.pin{position:absolute;top:-6px;z-index:4;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;color:#fff;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.gallery-star{position:absolute;color:#f0c860;opacity:.5;animation:twinkle 2s ease-in-out infinite var(--del,0s)}
+
+.dc{background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border-radius:16px;padding:20px;box-shadow:0 4px 15px rgba(200,100,140,.08);border:1.5px solid rgba(248,164,200,.15);transition:all .3s}
+.dc:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(200,100,140,.18)}
+
+.sw{width:34px;height:34px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.12);transition:transform .3s;cursor:pointer}
+.sw:hover{transform:scale(1.25)}
+
+.shim{background:linear-gradient(90deg,#d4a574,#f8a4c8,#f0c860,#c9a4e8,#d4a574);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s linear infinite}
+
+.rban{background:linear-gradient(90deg,#f8a4c8,#f0c860,#f8a4c8);color:#fff;padding:6px 28px;position:relative;display:inline-block;font-size:13px;letter-spacing:.5px}
+.rban::before,.rban::after{content:'';position:absolute;top:100%;border:12px solid #d870a0}
+.rban::before{left:0;border-left-color:transparent;border-bottom-color:transparent}
+.rban::after{right:0;border-right-color:transparent;border-bottom-color:transparent}
+
+.balloon{position:absolute;pointer-events:none}
+.balloon-body{width:28px;height:34px;border-radius:50% 50% 50% 50% / 55% 55% 45% 45%;position:relative}
+.balloon-body::after{content:'';position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);width:1px;height:18px;background:rgba(200,150,150,.5)}
+.balloon-body::before{content:'';position:absolute;top:6px;left:50%;transform:translateX(-50%);width:6px;height:8px;background:rgba(255,255,255,.35);border-radius:50%;transform:translateX(-50%) rotate(-30deg)}
+
+.confetti{position:fixed;pointer-events:none;z-index:200;border-radius:2px}
+.map-box{border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(200,100,140,.12);border:2.5px solid rgba(248,164,200,.18);background:rgba(255,255,255,.9);position:relative}
+
+.toast{position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-80px);background:rgba(255,255,255,.95);backdrop-filter:blur(10px);padding:12px 24px;border-radius:12px;box-shadow:0 4px 20px rgba(200,100,140,.2);border:1px solid rgba(248,164,200,.2);z-index:300;font-size:13px;color:#5a3d5c;transition:transform .5s cubic-bezier(.4,0,.2,1);white-space:nowrap}
 .toast.show{transform:translateX(-50%) translateY(0)}
 
-.card{background:linear-gradient(135deg,rgba(255,255,255,.94),rgba(255,240,245,.94));backdrop-filter:blur(8px);border:1px solid rgba(201,149,44,.15);border-radius:14px;padding:20px;text-align:center;box-shadow:0 6px 24px rgba(0,0,0,.05);transition:all .3s ease}
+.cake-wrap{position:relative;display:inline-block;animation:cakeGlow 2s ease-in-out infinite}
+.cake-base{width:100px;height:50px;background:linear-gradient(180deg,#fce4ec,#f8c0d0);border-radius:8px 8px 12px 12px;position:relative}
+.cake-base::before{content:'';position:absolute;top:-10px;left:-4px;right:-4px;height:14px;background:linear-gradient(180deg,#f8d0e0,#f0b8cc);border-radius:8px 8px 4px 4px}
+.cake-base::after{content:'';position:absolute;bottom:0;left:5px;right:5px;height:6px;background:linear-gradient(180deg,#e8a0b8,#d8889e);border-radius:0 0 10px 10px}
+.cake-drip{position:absolute;top:-4px;left:10%;right:10%;height:16px;background:linear-gradient(180deg,#f0c8d8,#f8a4c8);border-radius:0 0 50% 50% / 0 0 100% 100%}
+.candle{position:absolute;top:-28px;left:50%;transform:translateX(-50%);width:6px;height:20px;background:linear-gradient(180deg,#f0e0a0,#e8c860);border-radius:2px 2px 0 0}
+.flame{position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:8px;height:12px;background:radial-gradient(ellipse at 50% 90%,#fff8e0,#f0c030,#e89020);border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;animation:candleFlame .3s ease-in-out infinite}
 
-.map-wrap{border-radius:14px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.08);border:1.5px solid rgba(201,149,44,.15)}
+/* ===== ANGPAU CARD ===== */
+.angpau-card{background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-radius:16px;padding:16px;text-align:center;box-shadow:0 4px 18px rgba(200,100,140,.12);border:1.5px solid rgba(248,164,200,.18);transition:all .3s;cursor:pointer;position:relative;overflow:hidden}
+.angpau-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(200,100,140,.22);border-color:rgba(240,200,96,.4)}
+.angpau-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#f0c860,#f8a4c8,#f0c860)}
+.angpau-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:20px}
+.angpau-name{font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;color:#5a3d5c;margin-bottom:4px}
+.angpau-num{font-family:'Poppins',sans-serif;font-size:10px;color:#8a6a8c;word-break:break-all}
+.angpau-qr{width:80px;height:80px;background:rgba(248,164,200,.08);border:1.5px dashed rgba(248,164,200,.3);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:8px auto 0;font-size:10px;color:#b090b0}
+/* Floating coins on angpau slide */
+.coin{position:absolute;pointer-events:none;opacity:0;animation:coinFloat 3s ease-in-out infinite var(--del,0s)}
+.coin i{color:#f0c860;font-size:12px;filter:drop-shadow(0 1px 2px rgba(200,150,0,.3))}
 
-@keyframes fl{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(4deg)}}
-.fl{animation:fl 3.5s ease-in-out infinite}
-
-@keyframes sBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
-.s-bounce{animation:sBounce 2s ease-in-out infinite}
-
-.inp{width:100%;padding:12px 16px;border-radius:50px;border:1px solid rgba(201,149,44,.2);background:rgba(255,255,255,.85);color:#800f2f;font-size:.82rem;font-family:'Montserrat',sans-serif;text-align:center;outline:none;transition:all .3s ease}
-.inp::placeholder{color:#ffb3c1}
-.inp:focus{border-color:#e9c96e;box-shadow:0 0 0 3px rgba(201,149,44,.12)}
-.inp-ta{border-radius:16px;resize:none;text-align:left;padding:14px 16px}
-select.inp{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23c9952c' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+@media(max-width:380px){.envelope{width:260px;height:175px}.env-card{left:10%;width:80%}.frame{inset:8px}.poetic-line{font-size:11px}}
 </style>
 </head>
 <body>
 
-<button id="mBtn" class="m-btn" onclick="toggleMusic()"><i data-lucide="music" style="width:18px;height:18px"></i></button>
-<div id="toast" class="toast"></div>
+<div class="toast" id="toast"></div>
 
-<!-- ===== COVER — BACKGROUND UTAMA FULL SCREEN ===== -->
-<div id="cover">
-  <div class="cover-bg">
-    <img src="https://z-cdn-media.chatglm.cn/files/c84eb5ec-eca2-460b-807c-015349adfdf7.png?auth_key=1885837166-a60562c2660d42b78b79e07cef802c8b-0-14a9465bc582c82fa2113b1dce90a3b9" alt="Wedding Cover">
-    <div class="cover-overlay"></div>
+<audio id="bgMusic" loop preload="auto">
+  <source src="ultah.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" id="musicBtn" onclick="toggleMusic()" aria-label="Toggle music">
+  <div class="sound-wave" style="display:none"></div>
+  <div class="sound-wave" style="display:none"></div>
+  <div class="sound-wave" style="display:none"></div>
+  <i class="fas fa-music music-icon"></i>
+</button>
+
+<!-- ===== SLIDE 1: OPENING ===== -->
+<div class="slide active" id="s1">
+  <div class="slide-bg-photo dark-overlay" id="s1bg"></div>
+  <div class="petal" style="top:8%;left:8%;--dur:7s;--del:0s"><svg width="16" height="16" viewBox="0 0 16 16"><ellipse cx="8" cy="8" rx="7" ry="4" fill="rgba(248,180,200,.35)" transform="rotate(-30 8 8)"/></svg></div>
+  <div class="petal" style="top:15%;right:12%;--dur:8s;--del:1s"><svg width="14" height="14" viewBox="0 0 14 14"><ellipse cx="7" cy="7" rx="6" ry="3.5" fill="rgba(255,220,230,.3)" transform="rotate(20 7 7)"/></svg></div>
+  <div class="petal" style="bottom:25%;left:15%;--dur:6.5s;--del:2s"><svg width="12" height="12" viewBox="0 0 12 12"><ellipse cx="6" cy="6" rx="5" ry="3" fill="rgba(240,200,210,.3)" transform="rotate(-45 6 6)"/></svg></div>
+  <div class="petal" style="bottom:18%;right:20%;--dur:9s;--del:.5s"><svg width="15" height="15" viewBox="0 0 15 15"><ellipse cx="7.5" cy="7.5" rx="6.5" ry="3.5" fill="rgba(248,190,210,.3)" transform="rotate(10 7.5 7.5)"/></svg></div>
+  <div class="frame frame-gold"><div class="frame-inner"></div><div class="c tl"></div><div class="c tr"></div><div class="c bl"></div><div class="c br"></div><div class="fd t"></div><div class="fd b"></div><div class="fd l"></div><div class="fd r"></div>
+    <div style="position:absolute;top:-4px;right:40px;width:6px;height:6px;border-radius:50%;background:#f0c860;opacity:.6;animation:twinkle 2s ease-in-out infinite"></div>
+    <div style="position:absolute;bottom:-4px;left:40px;width:6px;height:6px;border-radius:50%;background:#f0c860;opacity:.6;animation:twinkle 2.5s ease-in-out infinite .5s"></div>
   </div>
-  <div class="cover-content">
-    <p class="font-sans text-rose-100/80 text-[10px] tracking-[.35em] uppercase mb-3 font-light">The Wedding of</p>
-    <h1 class="font-script text-[3.2rem] leading-tight text-white glow mb-0.5">Azka</h1>
-    <div class="flex items-center justify-center gap-3 my-2.5">
-      <span class="block w-10 h-px bg-gradient-to-r from-transparent to-gold-300/60"></span>
-      <span class="text-gold-300 text-xl font-serif">&amp;</span>
-      <span class="block w-10 h-px bg-gradient-to-l from-transparent to-gold-300/60"></span>
+  <div class="envelope-wrap">
+    <div class="envelope" id="envelope" onclick="openEnvelope()">
+      <div class="env-body"></div><div class="env-bottom"></div>
+      <div class="env-card"><i class="fas fa-cake-candles text-2xl mb-2" style="color:#d4a574"></i><p class="font-script text-xl" style="color:#d4a574">You're Invited</p><p class="font-display text-sm mt-1" style="color:#c05070">Birthday Party</p></div>
+      <div class="env-flap"></div>
+      <div class="wax-seal"><i class="fas fa-gift text-white text-sm"></i></div>
     </div>
-    <h1 class="font-script text-[3.2rem] leading-tight text-white glow mb-5">Kirana</h1>
-    <p class="font-sans text-rose-100/50 text-[9px] tracking-[.3em] uppercase mb-8">25 &amp; 26 · Juli · 2026</p>
-    <button onclick="openInvitation()" class="rsvp-btn bg-gradient-to-r from-gold-500 via-gold-400 to-gold-500 text-white font-sans text-[10px] tracking-[.25em] uppercase px-9 py-3.5 rounded-full border border-gold-300/25 shadow-lg shadow-gold-500/20">
-      Buka Undangan
-    </button>
-    <div class="mt-8 s-bounce">
-      <i data-lucide="chevron-down" style="width:20px;height:20px" class="text-white/30 mx-auto"></i>
+    <p class="tap-hint font-body" id="tapHint"><i class="fas fa-hand-pointer mr-1"></i> Ketuk amplop untuk membuka</p>
+    <div class="poetic-intro" id="poeticIntro">
+      <span class="poetic-line">"Setiap hari adalah anugerah,</span>
+      <span class="poetic-line">tapi ada satu hari yang istimewa</span>
+      <span class="poetic-line">yang Allah pilih untuk menghadirkan</span>
+      <span class="poetic-line">seseorang yang membawa cahaya</span>
+      <span class="poetic-line">dalam kehidupan kita semua."</span>
     </div>
   </div>
 </div>
 
-<div id="doors" class="door-wrap"><div class="door-l"></div><div class="door-r"></div></div>
-<div id="petals"></div>
+<!-- ===== SLIDE 2: KATA PENGANTAR ===== -->
+<div class="slide" id="s2"><div class="slide-bg-photo light-overlay s-bg"></div>
+  <div class="frame" style="animation:frameGlow 4s ease-in-out infinite .5s"><div class="frame-inner"></div><div class="c tl"></div><div class="c tr"></div><div class="c bl"></div><div class="c br"></div><div class="fd t"></div><div class="fd b"></div><div class="fd l"></div><div class="fd r"></div></div>
+  <div class="rf" style="width:90px;height:14px;background:rgba(240,200,96,.6);top:5%;right:3%;--r:-10deg;--dy:-12px;--dur:4.5s"></div>
+  <div class="rf" style="width:60px;height:10px;background:rgba(201,164,232,.5);bottom:12%;left:5%;--r:18deg;--dy:-9px;--dur:5s;--del:.7s"></div>
+  <div style="position:absolute;top:8%;left:15%;animation:float 3s ease-in-out infinite"><i class="fas fa-heart text-blush text-xs opacity-50"></i></div>
+  <div style="position:absolute;top:20%;right:20%;animation:float 3.5s ease-in-out infinite .5s"><i class="fas fa-star text-gold text-xs opacity-50"></i></div>
+  <div class="anim" style="position:absolute;top:6%;left:50%;transform:translateX(-50%);animation:floatSlow 3s ease-in-out infinite!important;opacity:1!important"><i class="fas fa-cake-candles text-4xl" style="color:#d4a574;opacity:.6"></i></div>
+  <div class="flex flex-col items-center justify-center min-h-screen px-6 py-16 text-center">
+    <div class="anim"><div class="bow mb-6"><span class="bow-c"></span></div></div>
+    <p class="anim font-body text-sm tracking-widest uppercase" style="color:#c05070;letter-spacing:3px">Assalamualaikum Wr. Wb.</p>
+    <div class="anim mt-6 max-w-sm"><p class="font-body text-sm leading-relaxed" style="color:#5a3d5c">Dengan penuh rasa bahagia, kami mengundang <strong style="color:#c05070">Bapak/Ibu/Saudara/i</strong> untuk hadir merayakan hari spesial</p></div>
+    <h1 class="anim font-script text-5xl mt-6 shim" style="font-weight:700">Happy Birthday</h1>
+    <div class="anim mt-2"><span class="rban font-body font-medium">Alana Xiera - Ke 17</span></div>
+    <div class="anim mt-8 flex items-center gap-3">
+      <div style="width:40px;height:1px;background:linear-gradient(90deg,transparent,#f8a4c8)"></div>
+      <i class="fas fa-calendar-alt text-rosegold text-sm"></i>
+      <div style="width:40px;height:1px;background:linear-gradient(270deg,transparent,#f8a4c8)"></div>
+    </div>
+    <p class="anim font-display text-lg mt-3" style="color:#c05070">Sabtu, 15 Maret 2025</p>
+    <div class="anim mt-8"><div class="bow"><span class="bow-c"></span></div></div>
+    <p class="anim font-body text-xs mt-6" style="color:#8a6a8c">Wassalamualaikum Wr. Wb.</p>
+  </div>
+</div>
 
-<main id="main" style="opacity:0;transition:opacity 1s ease .6s">
-
-  <!-- BISMILLAH -->
-  <section class="pg">
-    <div class="bg"><img src="https://z-cdn-media.chatglm.cn/files/5a59f1d1-ca56-4c5b-a1bb-6c6c6473e3d5.png?auth_key=1885836236-9b20f04ed3dc42d1a5973ab07ffb846a-0-ec94df1896ff2e3bd7345434e4bef247" alt="" loading="lazy"></div>
-    <div class="ct flex flex-col items-center justify-center text-center h-full">
-      <div class="rv">
-        <p class="font-serif text-rose-700/80 text-lg italic leading-relaxed">Bismillaahirrahmaanirrahiim</p>
-        <div class="sep mt-5 mb-5"><span class="ln"></span><span>🌸</span><span class="ln"></span></div>
-        <p class="font-sans text-rose-800/55 text-[13px] leading-[1.8] px-2">Assalamu'alaikum Warahmatullahi Wabarakatuh<br><br>Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i serta teman-teman sekalian untuk menghadiri acara pernikahan kami.</p>
+<!-- ===== SLIDE 3: TEMPAT ===== -->
+<div class="slide" id="s3"><div class="slide-bg-photo light-overlay s-bg"></div>
+  <div class="frame" style="animation:frameGlow 4s ease-in-out infinite 1s"><div class="frame-inner"></div><div class="c tl"></div><div class="c tr"></div><div class="c bl"></div><div class="c br"></div><div class="fd t"></div><div class="fd b"></div><div class="fd l"></div><div class="fd r"></div></div>
+  <div style="position:absolute;top:6%;right:15%;animation:pinBounce 2s ease-in-out infinite"><i class="fas fa-map-marker-alt text-3xl text-blush opacity-60"></i></div>
+  <div class="flex flex-col items-center justify-center min-h-screen px-6 py-16">
+    <p class="anim font-body text-xs tracking-widest uppercase" style="color:#c05070;letter-spacing:2px">Tempat Acara</p>
+    <h2 class="anim font-display text-3xl mt-3" style="color:#5a3d5c;font-weight:700">Venue</h2>
+    <div class="anim mt-2" style="width:50px;height:3px;background:linear-gradient(90deg,#f8a4c8,#f0c860);border-radius:2px"></div>
+    <div class="anim mt-8 w-full max-w-sm">
+      <div class="dc p-6 text-center">
+        <i class="fas fa-utensils text-3xl mb-3" style="color:#d4a574"></i>
+        <h3 class="font-display text-xl" style="color:#5a3d5c;font-weight:600">Garden Restaurant</h3>
+        <p class="font-body text-sm mt-2" style="color:#6a5a6c">Jl. Melati No. 45, Bandung</p>
+        <div class="flex items-center justify-center gap-2 mt-3"><i class="fas fa-clock text-xs" style="color:#d4a574"></i><p class="font-body text-xs" style="color:#6a5a6c">Pukul 15:00 - 19:00 WIB</p></div>
       </div>
     </div>
-  </section>
-
-  <!-- MEMPELAI -->
-  <section class="pg" style="min-height:auto;padding:60px 0">
-    <div class="bg"><img src="https://z-cdn-media.chatglm.cn/files/5a59f1d1-ca56-4c5b-a1bb-6c6c6473e3d5.png?auth_key=1885836236-9b20f04ed3dc42d1a5973ab07ffb846a-0-ec94df1896ff2e3bd7345434e4bef247" alt="" loading="lazy"></div>
-    <div class="ct text-center">
-      <div class="rv"><p class="font-sans text-gold-600 text-[9px] tracking-[.35em] uppercase mb-1.5">Mempelai Pria</p></div>
-      <div class="rvs" style="transition-delay:.15s">
-        <h2 class="font-script text-[2.6rem] leading-tight text-rose-700 glow mb-1">Muhammad Azka Ridzik</h2>
-        <p class="font-serif text-rose-400 italic text-base mb-3">Azka</p>
-      </div>
-      <div class="rv" style="transition-delay:.3s">
-        <div class="flex items-center justify-center gap-2 mb-1.5"><span>🌹</span><span class="text-gold-500 text-[9px] tracking-[.2em] uppercase">Putra dari</span><span>🌹</span></div>
-        <p class="font-serif text-rose-800 text-base">Rozak Shiddiq <span class="text-gold-500 mx-1.5">&amp;</span> Chintia Dewi</p>
-      </div>
-      <div class="my-7 rv"><div class="flex items-center justify-center gap-3"><span class="block w-12 h-px bg-gradient-to-r from-transparent to-gold-400"></span><span class="text-2xl">💐</span><span class="block w-12 h-px bg-gradient-to-l from-transparent to-gold-400"></span></div></div>
-      <div class="rv" style="transition-delay:.15s"><p class="font-sans text-gold-600 text-[9px] tracking-[.35em] uppercase mb-1.5">Mempelai Wanita</p></div>
-      <div class="rvs" style="transition-delay:.3s">
-        <h2 class="font-script text-[2.6rem] leading-tight text-rose-700 glow mb-1">Cahya Putri Kirana</h2>
-        <p class="font-serif text-rose-400 italic text-base mb-3">Kirana</p>
-      </div>
-      <div class="rv" style="transition-delay:.45s">
-        <div class="flex items-center justify-center gap-2 mb-1.5"><span>🌹</span><span class="text-gold-500 text-[9px] tracking-[.2em] uppercase">Putri dari</span><span>🌹</span></div>
-        <p class="font-serif text-rose-800 text-base">Ahmad Zailani <span class="text-gold-500 mx-1.5">&amp;</span> Marry Putri</p>
+    <div class="anim mt-6 w-full max-w-sm">
+      <div class="map-box" style="height:200px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px">
+        <div style="position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect fill=%22%23e8f5ee%22 width=%22100%22 height=%22100%22/><path d=%22M0 50h100M50 0v100%22 stroke=%22%23d0e8d8%22 stroke-width=%220.5%22 fill=%22none%22/><circle cx=%2225%22 cy=%2230%22 r=%228%22 fill=%22%23d8e8d0%22/><circle cx=%2270%22 cy=%2265%22 r=%2212%22 fill=%22%23d0e0d0%22/></svg>') repeat;background-size:80px 80px;opacity:.5"></div>
+        <i class="fas fa-map-marker-alt text-3xl text-blush relative" style="animation:pinBounce 2s ease-in-out infinite;z-index:2"></i>
+        <p class="font-body text-xs relative" style="color:#6a8a6c;z-index:2">Garden Restaurant Bandung</p>
+        <a href="https://maps.google.com/?q=Garden+Restaurant+Bandung" target="_blank" class="relative z-2 px-5 py-2 rounded-full text-white text-xs font-medium mt-1" style="background:linear-gradient(135deg,#f8a4c8,#f0c860);z-index:2;box-shadow:0 3px 10px rgba(248,164,200,.3)"><i class="fas fa-external-link-alt mr-1"></i> Buka di Google Maps</a>
       </div>
     </div>
-  </section>
+  </div>
+</div>
 
-  <!-- COUNTDOWN -->
-  <section class="pg">
-    <div class="bg"><img src="https://z-cdn-media.chatglm.cn/files/5a59f1d1-ca56-4c5b-a1bb-6c6c6473e3d5.png?auth_key=1885836236-9b20f04ed3dc42d1a5973ab07ffb846a-0-ec94df1896ff2e3bd7345434e4bef247" alt="" loading="lazy"></div>
-    <div class="ct text-center">
-      <div class="rv">
-        <p class="font-sans text-gold-600 text-[9px] tracking-[.35em] uppercase mb-2">Menuju Hari Bahagia</p>
-        <h2 class="font-script text-[2.4rem] text-rose-700 mb-7">Save The Date</h2>
+<!-- ===== SLIDE 4: DRESS CODE ===== -->
+<div class="slide" id="s4"><div class="slide-bg-photo light-overlay s-bg"></div>
+  <div class="frame" style="animation:frameGlow 4s ease-in-out infinite 1.5s"><div class="frame-inner"></div><div class="c tl"></div><div class="c tr"></div><div class="c bl"></div><div class="c br"></div><div class="fd t"></div><div class="fd b"></div><div class="fd l"></div><div class="fd r"></div></div>
+  <div style="position:absolute;bottom:18%;right:10%;animation:presentBounce 2.5s ease-in-out infinite .3s"><i class="fas fa-gift text-2xl text-blush opacity-50"></i></div>
+  <div class="flex flex-col items-center justify-center min-h-screen px-6 py-16">
+    <p class="anim font-body text-xs tracking-widest uppercase" style="color:#c05070;letter-spacing:2px">Tata Busana</p>
+    <h2 class="anim font-display text-3xl mt-3" style="color:#5a3d5c;font-weight:700">Dress Code</h2>
+    <div class="anim mt-2" style="width:50px;height:3px;background:linear-gradient(90deg,#f8a4c8,#f0c860);border-radius:2px"></div>
+    <div class="anim mt-8 w-full max-w-sm grid grid-cols-2 gap-4">
+      <div class="dc text-center">
+        <div class="w-14 h-14 mx-auto rounded-full flex items-center justify-center mb-3" style="background:linear-gradient(135deg,#e8e0f0,#d8d0e8)"><i class="fas fa-vest-patches text-xl" style="color:#7a5a9c"></i></div>
+        <h4 class="font-display text-base font-semibold" style="color:#5a3d5c">Pria</h4>
+        <ul class="font-body text-xs mt-2 space-y-1.5 text-left" style="color:#6a5a6c"><li><i class="fas fa-check text-mint text-xs mr-1"></i> Kemeja casual</li><li><i class="fas fa-check text-mint text-xs mr-1"></i> Celana chino</li><li><i class="fas fa-check text-mint text-xs mr-1"></i> Sepatu clean</li><li><i class="fas fa-check text-mint text-xs mr-1"></i> Aksesoris ringan</li></ul>
       </div>
-      <div class="flex justify-center gap-2.5 rvs" style="transition-delay:.2s">
-        <div class="cd-box"><div class="cd-n" id="cd-d">00</div><div class="cd-l">Hari</div></div>
-        <div class="cd-box"><div class="cd-n" id="cd-h">00</div><div class="cd-l">Jam</div></div>
-        <div class="cd-box"><div class="cd-n" id="cd-m">00</div><div class="cd-l">Menit</div></div>
-        <div class="cd-box"><div class="cd-n" id="cd-s">00</div><div class="cd-l">Detik</div></div>
-      </div>
-      <div class="rv mt-6" style="transition-delay:.4s">
-        <p class="font-serif text-rose-500/70 italic text-sm">Sabtu, 25 Juli 2026 &amp; Minggu, 26 Juli 2026</p>
+      <div class="dc text-center">
+        <div class="w-14 h-14 mx-auto rounded-full flex items-center justify-center mb-3" style="background:linear-gradient(135deg,#fce4f0,#f8d0e8)"><i class="fas fa-person-dress text-xl text-blush"></i></div>
+        <h4 class="font-display text-base font-semibold" style="color:#5a3d5c">Wanita</h4>
+        <ul class="font-body text-xs mt-2 space-y-1.5 text-left" style="color:#6a5a6c"><li><i class="fas fa-check text-mint text-xs mr-1"></i> Dress casual</li><li><i class="fas fa-check text-mint text-xs mr-1"></i> Warna pastel</li><li><i class="fas fa-check text-mint text-xs mr-1"></i> Sepatu / heels</li><li><i class="fas fa-check text-mint text-xs mr-1"></i> Tas kecil</li></ul>
       </div>
     </div>
-  </section>
-
-  <!-- ACARA -->
-  <section class="pg" style="min-height:auto;padding:50px 0">
-    <div class="bg"><img src="https://z-cdn-media.chatglm.cn/files/5a59f1d1-ca56-4c5b-a1bb-6c6c6473e3d5.png?auth_key=1885836236-9b20f04ed3dc42d1a5973ab07ffb846a-0-ec94df1896ff2e3bd7345434e4bef247" alt="" loading="lazy"></div>
-    <div class="ct text-center">
-      <div class="rv">
-        <p class="font-sans text-gold-600 text-[9px] tracking-[.35em] uppercase mb-2">Jadwal Acara</p>
-        <h2 class="font-script text-[2.4rem] text-rose-700 mb-7">Waktu &amp; Tempat</h2>
-      </div>
-      <div class="space-y-4 px-2">
-        <div class="rvl" style="transition-delay:.15s">
-          <div class="card">
-            <div class="text-2xl mb-2 fl">🌸</div>
-            <p class="font-sans text-gold-600 text-[9px] tracking-[.25em] uppercase mb-0.5">Resepsi</p>
-            <h3 class="font-serif text-rose-700 text-xl font-semibold mb-1.5">Sabtu</h3>
-            <p class="font-serif text-rose-800 text-lg">25 Juli 2026</p>
-            <p class="font-sans text-rose-500 font-medium text-sm mb-2.5">08.00 WITA</p>
-            <div class="sep mb-2.5"><span class="ln"></span><span class="text-xs">✨</span><span class="ln"></span></div>
-            <p class="font-sans text-rose-600/60 text-xs leading-relaxed">Gedung Serba Guna<br>Banjarmasin</p>
-          </div>
-        </div>
-        <div class="rvr" style="transition-delay:.3s">
-          <div class="card">
-            <div class="text-2xl mb-2 fl" style="animation-delay:1.2s">🌺</div>
-            <p class="font-sans text-gold-600 text-[9px] tracking-[.25em] uppercase mb-0.5">Wedding</p>
-            <h3 class="font-serif text-rose-700 text-xl font-semibold mb-1.5">Minggu</h3>
-            <p class="font-serif text-rose-800 text-lg">26 Juli 2026</p>
-            <p class="font-sans text-rose-500 font-medium text-sm mb-2.5">09.00 WITA</p>
-            <div class="sep mb-2.5"><span class="ln"></span><span class="text-xs">✨</span><span class="ln"></span></div>
-            <p class="font-sans text-rose-600/60 text-xs leading-relaxed">Gedung Serba Guna<br>Banjarmasin</p>
-          </div>
-        </div>
+    <div class="anim mt-6 text-center">
+      <p class="font-body text-xs mb-3" style="color:#6a5a6c">Warna yang direkomendasikan</p>
+      <div class="flex items-center justify-center gap-3">
+        <div class="sw" style="background:#f8c8d8" title="Baby Pink"></div><div class="sw" style="background:#d8c8f0" title="Lavender"></div><div class="sw" style="background:#c8e8e0" title="Sage Mint"></div><div class="sw" style="background:#f0e8c8" title="Cream"></div><div class="sw" style="background:#c8d8f0" title="Baby Blue"></div><div class="sw" style="background:#f0d8c8" title="Peach"></div>
       </div>
     </div>
-  </section>
-
-  <!-- PETA -->
-  <section class="pg">
-    <div class="bg"><img src="https://z-cdn-media.chatglm.cn/files/5a59f1d1-ca56-4c5b-a1bb-6c6c6473e3d5.png?auth_key=1885836236-9b20f04ed3dc42d1a5973ab07ffb846a-0-ec94df1896ff2e3bd7345434e4bef247" alt="" loading="lazy"></div>
-    <div class="ct text-center">
-      <div class="rv">
-        <p class="font-sans text-gold-600 text-[9px] tracking-[.35em] uppercase mb-2">Lokasi</p>
-        <h2 class="font-script text-[2.4rem] text-rose-700 mb-1.5">Peta Lokasi</h2>
-        <p class="font-sans text-rose-600/50 text-xs mb-5">Gedung Serba Guna Banjarmasin</p>
-      </div>
-      <div class="map-wrap rvs" style="transition-delay:.2s">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.0!2d114.59!3d-3.32!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwMTknMTIuMCJTIDExNMKwMzUnMjQuMCJF!5e0!3m2!1sid!2sid!4v1" width="100%" height="250" style="border:0;display:block" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-      <div class="rv mt-4" style="transition-delay:.4s">
-        <a href="https://www.google.com/maps/search/Gedung+Serba+Guna+Banjarmasin" target="_blank" class="inline-flex items-center gap-1.5 rsvp-btn bg-gradient-to-r from-rose-600 to-rose-500 text-white font-sans text-[9px] tracking-[.2em] uppercase px-7 py-3 rounded-full">
-          <i data-lucide="map-pin" style="width:13px;height:13px"></i> Buka Maps
-        </a>
+    <div class="anim mt-6 w-full max-w-sm">
+      <div class="bg-amber-50 rounded-xl p-4 border border-amber-100 text-center" style="animation:glowPulse 3s ease-in-out infinite">
+        <p class="font-body text-xs font-medium" style="color:#a07030"><i class="fas fa-lightbulb mr-1"></i> Casual chic — tampil cantik tapi nyaman ya!</p>
       </div>
     </div>
-  </section>
+  </div>
+</div>
 
-  <!-- LOVE STORY -->
-  <section class="pg" style="min-height:auto;padding:50px 0">
-    <div class="bg"><img src="https://z-cdn-media.chatglm.cn/files/5a59f1d1-ca56-4c5b-a1bb-6c6c6473e3d5.png?auth_key=1885836236-9b20f04ed3dc42d1a5973ab07ffb846a-0-ec94df1896ff2e3bd7345434e4bef247" alt="" loading="lazy"></div>
-    <div class="ct text-center">
-      <div class="rv">
-        <p class="font-sans text-gold-600 text-[9px] tracking-[.35em] uppercase mb-2">Cerita Kami</p>
-        <h2 class="font-script text-[2.4rem] text-rose-700 mb-8">Love Story</h2>
+<!-- ===== SLIDE 5: RUN DOWN ===== -->
+<div class="slide" id="s5"><div class="slide-bg-photo light-overlay s-bg"></div>
+  <div class="frame" style="animation:frameGlow 4s ease-in-out infinite 2s"><div class="frame-inner"></div><div class="c tl"></div><div class="c tr"></div><div class="c bl"></div><div class="c br"></div><div class="fd t"></div><div class="fd b"></div><div class="fd l"></div><div class="fd r"></div></div>
+  <div style="position:absolute;top:4%;right:10%"><i class="fas fa-clock text-2xl text-rosegold opacity:50" style="animation:sway 3s ease-in-out infinite"></i></div>
+  <div class="flex flex-col items-center justify-center min-h-screen px-6 py-16">
+    <p class="anim font-body text-xs tracking-widest uppercase" style="color:#c05070;letter-spacing:2px">Susunan Acara</p>
+    <h2 class="anim font-display text-3xl mt-3" style="color:#5a3d5c;font-weight:700">Run Down</h2>
+    <div class="anim mt-2" style="width:50px;height:3px;background:linear-gradient(90deg,#f8a4c8,#f0c860);border-radius:2px"></div>
+    <div class="anim mt-8 w-full max-w-sm">
+      <div class="tl-item"><div class="tl-dot"></div><p class="font-display text-sm font-semibold" style="color:#5a3d5c">15:00</p><p class="font-body text-xs mt-0.5" style="color:#6a5a6c">Arrival & Welcome Drink</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><p class="font-display text-sm font-semibold" style="color:#5a3d5c">15:30</p><p class="font-body text-xs mt-0.5" style="color:#6a5a6c">Games & Ice Breaking</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><p class="font-display text-sm font-semibold" style="color:#5a3d5c">16:00</p><p class="font-body text-xs mt-0.5" style="color:#6a5a6c">Tiup Lilin & Potong Kue</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><p class="font-display text-sm font-semibold" style="color:#5a3d5c">16:30</p><p class="font-body text-xs mt-0.5" style="color:#6a5a6c">Makan Bersama</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><p class="font-display text-sm font-semibold" style="color:#5a3d5c">17:15</p><p class="font-body text-xs mt-0.5" style="color:#6a5a6c">Perform & Karaoke</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><p class="font-display text-sm font-semibold" style="color:#5a3d5c">18:00</p><p class="font-body text-xs mt-0.5" style="color:#6a5a6c">Tukar Kado & Doa Bersama</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><p class="font-display text-sm font-semibold" style="color:#5a3d5c">18:30</p><p class="font-body text-xs mt-0.5" style="color:#6a5a6c">Foto Bareng & Free Time</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 6: GALLERY ===== -->
+<div class="slide" id="s6"><div class="slide-bg-photo light-overlay s-bg"></div>
+  <div class="frame" style="animation:frameGlow 4s ease-in-out infinite 2.5s"><div class="frame-inner"></div><div class="c tl"></div><div class="c tr"></div><div class="c bl"></div><div class="c br"></div><div class="fd t"></div><div class="fd b"></div><div class="fd l"></div><div class="fd r"></div></div>
+  <i class="fas fa-star gallery-star" style="top:7%;left:10%;font-size:10px;--del:0s"></i>
+  <i class="fas fa-star gallery-star" style="top:5%;right:12%;font-size:8px;--del:.4s"></i>
+  <i class="fas fa-star gallery-star" style="bottom:12%;left:8%;font-size:9px;--del:.8s"></i>
+  <div class="flex flex-col items-center justify-center min-h-screen px-6 py-14">
+    <p class="anim font-body text-xs tracking-widest uppercase" style="color:#c05070;letter-spacing:2px">Momen Terindah</p>
+    <h2 class="anim font-display text-3xl mt-3" style="color:#5a3d5c;font-weight:700">Gallery</h2>
+    <div class="anim mt-2" style="width:50px;height:3px;background:linear-gradient(90deg,#f8a4c8,#f0c860);border-radius:2px"></div>
+    <div class="anim mt-7 w-full max-w-sm" style="display:grid;grid-template-columns:1fr 1fr;gap:20px 16px;justify-items:center">
+      <div class="polaroid" style="transform:rotate(-3deg);animation:gentleFloat 4s ease-in-out infinite" onclick="openLightbox(this)"><div class="tape" style="--tr:-4deg"></div><img src="https://z-cdn-media.chatglm.cn/files/676e5fb7-b4d1-4e5a-afbc-2d7f3d426d1d.jpg?auth_key=1886368044-6aff08808d6b43448ce4273c221fdd5c-0-c24bdf8c807974f711622141f0088257" alt="Bunga & Mahkota" style="height:150px" loading="lazy"><p class="polaroid-label">Bunga & Mahkota</p></div>
+      <div class="polaroid" style="transform:rotate(2.5deg);margin-top:12px;animation:gentleFloat 4.5s ease-in-out infinite .5s" onclick="openLightbox(this)"><div class="pin" style="left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#f8a4c8,#e88ab8)"><i class="fas fa-heart" style="font-size:7px"></i></div><img src="https://z-cdn-media.chatglm.cn/files/09e57d35-a95e-4a85-9843-90682a222d8f.jpg?auth_key=1886368044-c7a5f01008ca44c6b05b728d5d2cb2b3-0-1e7fefdfa50e3faf23e7f50b4c2ac6e6" alt="Tiup Lilin" style="height:150px" loading="lazy"><p class="polaroid-label">Tiup Lilin</p></div>
+      <div class="polaroid" style="transform:rotate(2deg);margin-top:-8px;animation:gentleFloat 5s ease-in-out infinite 1s" onclick="openLightbox(this)"><div class="pin" style="left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#f0c860,#e0b040)"><i class="fas fa-star" style="font-size:7px"></i></div><img src="https://z-cdn-media.chatglm.cn/files/ba9119f6-ea8e-4fec-a824-b7bf5c1f9f29.jpg?auth_key=1886368044-9a0a79ede43042d98ba7b45013f5643a-0-590677209b4eb5f07ac562b318399752" alt="Ayunan Pantai" style="height:150px" loading="lazy"><p class="polaroid-label">Ayunan Pantai</p></div>
+      <div class="polaroid" style="transform:rotate(-2.5deg);margin-top:4px;animation:gentleFloat 4.2s ease-in-out infinite .8s" onclick="openLightbox(this)"><div class="tape" style="--tr:3deg"></div><img src="https://z-cdn-media.chatglm.cn/files/298c19f3-4f7b-4e99-9b93-c756fdf78f50.jpg?auth_key=1886368044-5d4f19a63e7e4bb896290d0bd61da23a-0-8deb1bc408b7cff03e071a0eb87a3b6f" alt="Piknik Taman" style="height:150px" loading="lazy"><p class="polaroid-label">Piknik Taman</p></div>
+    </div>
+    <div class="anim mt-6 flex items-center gap-3"><div style="width:30px;height:1px;background:linear-gradient(90deg,transparent,#f8a4c8)"></div><i class="fas fa-camera-retro text-sm" style="color:#d4a574;opacity:.6"></i><div style="width:30px;height:1px;background:linear-gradient(270deg,transparent,#f8a4c8)"></div></div>
+    <p class="anim font-body text-xs mt-2" style="color:#8a6a8c">Kenangan manis yang selalu membahagiakan</p>
+  </div>
+</div>
+
+<!-- ===== SLIDE 7: WISHES ===== -->
+<div class="slide" id="s7"><div class="slide-bg-photo light-overlay s-bg"></div>
+  <div class="frame" style="animation:frameGlow 4s ease-in-out infinite 3s"><div class="frame-inner"></div><div class="c tl"></div><div class="c tr"></div><div class="c bl"></div><div class="c br"></div><div class="fd t"></div><div class="fd b"></div><div class="fd l"></div><div class="fd r"></div></div>
+  <div class="balloon" style="top:6%;left:12%;animation:balloonFloat 7s ease-in-out infinite"><div class="balloon-body" style="background:linear-gradient(135deg,#f8a4c8,#e88ab8)"></div></div>
+  <div class="balloon" style="top:10%;right:18%;animation:balloonFloat 6s ease-in-out infinite 1.5s"><div class="balloon-body" style="background:linear-gradient(135deg,#a4c8f0,#88b0e0)"></div></div>
+  <div class="balloon" style="top:3%;left:50%;animation:balloonFloat 8s ease-in-out infinite 3s"><div class="balloon-body" style="background:linear-gradient(135deg,#f0c860,#e0b040)"></div></div>
+  <div class="flex flex-col items-center justify-center min-h-screen px-6 py-16 text-center">
+    <div class="anim"><i class="fas fa-feather-pointed text-3xl" style="color:#d4a574;opacity:.6"></i></div>
+    <p class="anim font-body text-xs tracking-widest uppercase mt-4" style="color:#c05070;letter-spacing:2px">Pesan & Ucapan</p>
+    <h2 class="anim font-display text-3xl mt-3" style="color:#5a3d5c;font-weight:700">Wishes</h2>
+    <div class="anim mt-2" style="width:50px;height:3px;background:linear-gradient(90deg,#f0c860,#f8a4c8);border-radius:2px"></div>
+    <div class="anim mt-8 max-w-sm"><blockquote class="font-display italic text-lg leading-relaxed" style="color:#5a3d5c">"The more you praise and celebrate your life, the more there is in life to celebrate."</blockquote><p class="font-body text-xs mt-2" style="color:#8a6a8c">— Oprah Winfrey</p></div>
+    <div class="anim mt-8 w-full max-w-sm space-y-4 text-left">
+      <div class="dc p-5"><div class="flex items-start gap-3"><div class="w-9 h-9 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#fce4f0,#f8d0e8)"><i class="fas fa-quote-left text-xs text-blush"></i></div><div><p class="font-body text-sm" style="color:#5a3d5c">Happy birthday bestie! Semoga di umur 17 ini makin cantik, makin pinter, dan makin bahagia. Love you!</p><p class="font-script text-sm mt-2" style="color:#c05070">— Dina Maharani</p></div></div></div>
+      <div class="dc p-5"><div class="flex items-start gap-3"><div class="w-9 h-9 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#e8e0f0,#d8d0e8)"><i class="fas fa-quote-left text-xs text-lavender"></i></div><div><p class="font-body text-sm" style="color:#5a3d5c">Barakallahu fii umrik, Alana! Semoga semua impianmu tercapai dan selalu dilindungi Allah.</p><p class="font-script text-sm mt-2" style="color:#c05070">— Rizky Pratama</p></div></div></div>
+      <div class="dc p-5"><div class="flex items-start gap-3"><div class="w-9 h-9 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#fef0e4,#f8dcc8)"><i class="fas fa-quote-left text-xs text-rosegold"></i></div><div><p class="font-body text-sm" style="color:#5a3d5c">Teman tersabar sekelas! Jangan berubah ya, tetap jadi Alana yang baik hati dan selalu ceria.</p><p class="font-script text-sm mt-2" style="color:#c05070">— Nabila Zahra</p></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 8: ANGPAU DIGITAL (BARU) ===== -->
+<div class="slide" id="s8"><div class="slide-bg-photo light-overlay s-bg"></div>
+  <div class="frame" style="animation:angpauGlow 3s ease-in-out infinite"><div class="frame-inner"></div><div class="c tl"></div><div class="c tr"></div><div class="c bl"></div><div class="c br"></div><div class="fd t"></div><div class="fd b"></div><div class="fd l"></div><div class="fd r"></div></div>
+  <!-- Floating coins -->
+  <div class="coin" style="top:10%;left:12%;--del:0s"><i class="fas fa-coins"></i></div>
+  <div class="coin" style="top:20%;right:10%;--del:1s"><i class="fas fa-coins"></i></div>
+  <div class="coin" style="bottom:20%;left:8%;--del:2s"><i class="fas fa-coins"></i></div>
+  <div class="coin" style="bottom:12%;right:15%;--del:.5s"><i class="fas fa-coins"></i></div>
+  <div class="coin" style="top:45%;left:5%;--del:1.5s"><i class="fas fa-coins"></i></div>
+  <div class="coin" style="top:55%;right:4%;--del:2.5s"><i class="fas fa-coins"></i></div>
+
+  <div class="flex flex-col items-center justify-center min-h-screen px-5 py-14">
+    <div class="anim"><i class="fas fa-envelope-open-text text-3xl" style="color:#d4a574;opacity:.6"></i></div>
+    <p class="anim font-body text-xs tracking-widest uppercase mt-4" style="color:#c05070;letter-spacing:2px">Tanda Kasih</p>
+    <h2 class="anim font-script text-4xl mt-2" style="color:#c05070;font-weight:700">Angpau Digital</h2>
+    <div class="anim mt-2" style="width:50px;height:3px;background:linear-gradient(90deg,#f0c860,#f8a4c8);border-radius:2px"></div>
+    <p class="anim font-body text-xs mt-3 max-w-xs text-center" style="color:#6a5a6c">Doa restu adalah yang terutama, namun jika ingin memberikan tanda kasih, silakan melalui:</p>
+
+    <div class="anim mt-6 w-full max-w-sm grid grid-cols-2 gap-3">
+      <!-- QRIS -->
+      <div class="angpau-card" onclick="showToast('QRIS — Screenshot untuk scan')">
+        <div class="angpau-icon" style="background:linear-gradient(135deg,#1a1a2e,#16213e)"><i class="fas fa-qrcode text-white"></i></div>
+        <p class="angpau-name">QRIS</p>
+        <div class="angpau-qr"><i class="fas fa-qrcode text-2xl" style="color:rgba(248,164,200,.4)"></i></div>
       </div>
-      <div class="relative pl-10 text-left space-y-8">
-        <div class="tl-line"></div>
-        <div class="relative rvl" style="transition-delay:.1s">
-          <div class="tl-dot" style="top:4px"></div>
-          <div class="text-lg mb-0.5">🌸</div>
-          <p class="font-sans text-gold-500 text-[8px] tracking-[.2em] uppercase mb-0.5">Pertama Bertemu</p>
-          <p class="font-serif text-rose-700 text-lg italic mb-1">Takdir Mempertemukan</p>
-          <p class="font-sans text-rose-800/50 text-[12px] leading-relaxed">Allah SWT mempertemukan dua hati di saat yang tak terduga. Senyum pertama yang menjadi awal dari segalanya.</p>
-        </div>
-        <div class="relative rvr" style="transition-delay:.2s">
-          <div class="tl-dot" style="top:4px"></div>
-          <div class="text-lg mb-0.5">💐</div>
-          <p class="font-sans text-gold-500 text-[8px] tracking-[.2em] uppercase mb-0.5">Semakin Dekat</p>
-          <p class="font-serif text-rose-700 text-lg italic mb-1">Memahami Satu Sama Lain</p>
-          <p class="font-sans text-rose-800/50 text-[12px] leading-relaxed">Waktu berjalan, rasa semakin tumbuh. Perbincangan ringan berubah menjadi obrolan panjang tentang masa depan.</p>
-        </div>
-        <div class="relative rvl" style="transition-delay:.3s">
-          <div class="tl-dot" style="top:4px"></div>
-          <div class="text-lg mb-0.5">🌹</div>
-          <p class="font-sans text-gold-500 text-[8px] tracking-[.2em] uppercase mb-0.5">Lamaran</p>
-          <p class="font-serif text-rose-700 text-lg italic mb-1">Janji Suci Untuk Selamanya</p>
-          <p class="font-sans text-rose-800/50 text-[12px] leading-relaxed">Dengan keridhaan Allah dan restu kedua orang tua, Azka meminang Kirana dengan penuh cinta dan ketulusan.</p>
-        </div>
-        <div class="relative rvr" style="transition-delay:.4s">
-          <div class="tl-dot" style="top:4px"></div>
-          <div class="text-lg mb-0.5">💍</div>
-          <p class="font-sans text-gold-500 text-[8px] tracking-[.2em] uppercase mb-0.5">Pernikahan</p>
-          <p class="font-serif text-rose-700 text-lg italic mb-1">Menyatukan Dua Jiwa</p>
-          <p class="font-sans text-rose-800/50 text-[12px] leading-relaxed">Hari yang dinantikan akhirnya tiba. Dengan izin-Nya, kami siap memulai bahtera rumah tangga bersama.</p>
-        </div>
+      <!-- DANA -->
+      <div class="angpau-card" onclick="showToast('DANA — Screenshot untuk scan')">
+        <div class="angpau-icon" style="background:linear-gradient(135deg,#108ee9,#0a7fd4)"><i class="fas fa-wallet text-white"></i></div>
+        <p class="angpau-name">DANA</p>
+        <p class="angpau-num">0812-xxxx-xxxx</p>
+      </div>
+      <!-- GoPay -->
+      <div class="angpau-card" onclick="showToast('GoPay — Screenshot untuk scan')">
+        <div class="angpau-icon" style="background:linear-gradient(135deg,#00aed6,#008dba)"><i class="fas fa-money-bill-wave text-white"></i></div>
+        <p class="angpau-name">GoPay</p>
+        <p class="angpau-num">0812-xxxx-xxxx</p>
+      </div>
+      <!-- ShopeePay -->
+      <div class="angpau-card" onclick="showToast('ShopeePay — Screenshot untuk scan')">
+        <div class="angpau-icon" style="background:linear-gradient(135deg,#ee4d2d,#d4380c)"><i class="fas fa-shopping-bag text-white"></i></div>
+        <p class="angpau-name">ShopeePay</p>
+        <p class="angpau-num">0812-xxxx-xxxx</p>
+      </div>
+      <!-- OVO -->
+      <div class="angpau-card" onclick="showToast('OVO — Screenshot untuk scan')">
+        <div class="angpau-icon" style="background:linear-gradient(135deg,#4c3494,#37268a)"><i class="fas fa-credit-card text-white"></i></div>
+        <p class="angpau-name">OVO</p>
+        <p class="angpau-num">0812-xxxx-xxxx</p>
+      </div>
+      <!-- Bank Transfer -->
+      <div class="angpau-card" onclick="showToast('Bank — Salin nomor rekening')">
+        <div class="angpau-icon" style="background:linear-gradient(135deg,#f0c860,#d4a030)"><i class="fas fa-building-columns text-white"></i></div>
+        <p class="angpau-name">Bank Transfer</p>
+        <p class="angpau-num">BCA: 123-xxx-xxxx<br>a.n. Alana Xiera</p>
       </div>
     </div>
-  </section>
 
-  <!-- GALERI -->
-  <section class="pg" style="min-height:auto;padding:50px 0">
-    <div class="bg"><img src="https://z-cdn-media.chatglm.cn/files/5a59f1d1-ca56-4c5b-a1bb-6c6c6473e3d5.png?auth_key=1885836236-9b20f04ed3dc42d1a5973ab07ffb846a-0-ec94df1896ff2e3bd7345434e4bef247" alt="" loading="lazy"></div>
-    <div class="ct text-center">
-      <div class="rv">
-        <p class="font-sans text-gold-600 text-[9px] tracking-[.35em] uppercase mb-2">Momen Bahagia</p>
-        <h2 class="font-script text-[2.4rem] text-rose-700 mb-6">Galeri</h2>
-      </div>
-      <div class="grid grid-cols-2 gap-2.5 rvs" style="transition-delay:.2s">
-        <div class="gal aspect-[3/4] rounded-xl"><img src="https://picsum.photos/seed/akwed1/400/533" alt="G1" loading="lazy"></div>
-        <div class="gal aspect-[3/4] rounded-xl"><img src="https://picsum.photos/seed/akwed2/400/533" alt="G2" loading="lazy"></div>
-        <div class="gal aspect-[3/4] rounded-xl"><img src="https://picsum.photos/seed/akwed3/400/533" alt="G3" loading="lazy"></div>
-        <div class="gal aspect-[3/4] rounded-xl"><img src="https://picsum.photos/seed/akwed4/400/533" alt="G4" loading="lazy"></div>
-        <div class="gal aspect-[3/4] rounded-xl col-span-2 max-h-[220px]"><img src="https://picsum.photos/seed/akwed5/800/400" alt="G5" loading="lazy"></div>
-      </div>
+    <div class="anim mt-6 text-center">
+      <p class="font-body text-xs" style="color:#8a6a8c"><i class="fas fa-heart text-blush mr-1"></i> Terima kasih atas doa dan tanda kasihnya</p>
     </div>
-  </section>
+  </div>
+</div>
 
-  <!-- WEDDING GIFT -->
-  <section class="pg" style="min-height:auto;padding:50px 0">
-    <div class="bg"><img src="https://z-cdn-media.chatglm.cn/files/5a59f1d1-ca56-4c5b-a1bb-6c6c6473e3d5.png?auth_key=1885836236-9b20f04ed3dc42d1a5973ab07ffb846a-0-ec94df1896ff2e3bd7345434e4bef247" alt="" loading="lazy"></div>
-    <div class="ct text-center">
-      <div class="rv">
-        <p class="font-sans text-gold-600 text-[9px] tracking-[.35em] uppercase mb-2">Wedding Gift</p>
-        <h2 class="font-script text-[2.4rem] text-rose-700 mb-1.5">Amplop Digital</h2>
-        <p class="font-sans text-rose-600/50 text-[12px] mb-6 px-2 leading-relaxed">Doa restu Anda merupakan karunia yang sangat berarti. Jika ingin memberikan tanda kasih, kami menyediakan amplop digital.</p>
-      </div>
-      <div class="space-y-3.5 px-1">
-        <div class="card rvl" style="transition-delay:.15s">
-          <div class="text-2xl mb-2 fl">🏦</div>
-          <p class="font-sans text-gold-600 text-[9px] tracking-[.2em] uppercase mb-1">Bank BCA</p>
-          <p class="font-serif text-rose-700 text-xl font-semibold mb-0.5">1234567890</p>
-          <p class="font-sans text-rose-500/50 text-[11px] mb-2.5">a.n. Muhammad Azka Ridzik</p>
-          <button onclick="copyClip('1234567890','BCA')" class="inline-flex items-center gap-1 text-gold-600 text-[10px] tracking-wider active:opacity-60 transition-opacity"><i data-lucide="copy" style="width:11px;height:11px"></i> Salin</button>
-        </div>
-        <div class="card rvr" style="transition-delay:.3s">
-          <div class="text-2xl mb-2 fl" style="animation-delay:1.5s">🏦</div>
-          <p class="font-sans text-gold-600 text-[9px] tracking-[.2em] uppercase mb-1">Bank Mandiri</p>
-          <p class="font-serif text-rose-700 text-xl font-semibold mb-0.5">0987654321</p>
-          <p class="font-sans text-rose-500/50 text-[11px] mb-2.5">a.n. Cahya Putri Kirana</p>
-          <button onclick="copyClip('0987654321','Mandiri')" class="inline-flex items-center gap-1 text-gold-600 text-[10px] tracking-wider active:opacity-60 transition-opacity"><i data-lucide="copy" style="width:11px;height:11px"></i> Salin</button>
-        </div>
-      </div>
+<!-- ===== SLIDE 9: PENUTUP ===== -->
+<div class="slide" id="s9"><div class="slide-bg-photo light-overlay s-bg"></div>
+  <div class="frame" style="animation:frameGlow 3.5s ease-in-out infinite .3s"><div class="frame-inner"></div><div class="c tl"></div><div class="c tr"></div><div class="c bl"></div><div class="c br"></div><div class="fd t"></div><div class="fd b"></div><div class="fd l"></div><div class="fd r"></div>
+    <div style="position:absolute;top:-4px;right:60px;width:5px;height:5px;border-radius:50%;background:#f0c860;opacity:.5;animation:twinkle 2s ease-in-out infinite"></div>
+    <div style="position:absolute;bottom:-4px;left:60px;width:5px;height:5px;border-radius:50%;background:#f8a4c8;opacity:.5;animation:twinkle 2.5s ease-in-out infinite .5s"></div>
+  </div>
+  <div style="position:absolute;bottom:20%;left:10%;animation:heartFloat 4s ease-in-out infinite"><i class="fas fa-heart text-blush text-lg opacity-50"></i></div>
+  <div style="position:absolute;bottom:25%;left:30%;animation:heartFloat 3.5s ease-in-out infinite 1s"><i class="fas fa-heart text-gold text-sm opacity:40"></i></div>
+  <div style="position:absolute;bottom:15%;right:15%;animation:heartFloat 4.5s ease-in-out infinite .5s"><i class="fas fa-heart text-lavender text-lg opacity:45"></i></div>
+  <div class="balloon" style="top:3%;left:20%;animation:balloonFloat 6s ease-in-out infinite .5s"><div class="balloon-body" style="background:linear-gradient(135deg,#f8a4c8,#e88ab8)"></div></div>
+  <div class="balloon" style="top:5%;right:22%;animation:balloonFloat 7s ease-in-out infinite 2s"><div class="balloon-body" style="background:linear-gradient(135deg,#f0c860,#e0b040)"></div></div>
+  <div class="flex flex-col items-center justify-center min-h-screen px-6 py-16 text-center">
+    <div class="anim"><div class="bow" style="transform:scale(1.3)"><span class="bow-c"></span></div></div>
+    <h1 class="anim font-script text-6xl mt-6 shim" style="font-weight:700">Terima Kasih</h1>
+    <div class="anim mt-4" style="width:60px;height:3px;background:linear-gradient(90deg,#f8a4c8,#f0c860,#a4d8c8);border-radius:2px"></div>
+    <p class="anim font-body text-sm mt-6 max-w-xs leading-relaxed" style="color:#5a3d5c">Atas kehadiran dan doa restu Bapak/Ibu/Saudara/i, kami mengucapkan terima kasih yang sebesar-besarnya.</p>
+    <p class="anim font-body text-sm mt-4 max-w-xs leading-relaxed" style="color:#5a3d5c">Kehadiran kalian adalah kado terindah untuk hari spesial Alana.</p>
+    <div class="anim mt-8 flex items-center gap-3"><div style="width:35px;height:1px;background:linear-gradient(90deg,transparent,#f8a4c8)"></div><i class="fas fa-cake-candles text-rosegold text-sm"></i><div style="width:35px;height:1px;background:linear-gradient(270deg,transparent,#f8a4c8)"></div></div>
+    <div class="anim mt-6"><div class="cake-wrap"><div class="cake-base"><div class="cake-drip"></div><div class="candle"><div class="flame"></div></div></div></div></div>
+    <div class="anim mt-8 bg-white rounded-2xl p-6 max-w-xs w-full" style="box-shadow:0 4px 25px rgba(200,100,140,.1);border:1.5px solid rgba(248,164,200,.15)">
+      <p class="font-body text-xs tracking-widest uppercase mb-2" style="color:#b090b0;letter-spacing:2px">Sweet Seventeen</p>
+      <p class="font-script text-3xl" style="color:#d4a574;font-weight:700">Alana Xiera</p>
+      <p class="font-display text-4xl mt-3 font-bold" style="color:#c05070">17th</p>
     </div>
-  </section>
+    <div class="anim mt-8"><div class="bow"><span class="bow-c"></span></div></div>
+    <p class="anim font-body text-xs mt-8" style="color:#8a6a8c">Made with <i class="fas fa-heart text-blush text-xs"></i> for the sweetest person</p>
+  </div>
+</div>
 
-  <!-- UCAPAN WA -->
-  <section class="pg" style="min-height:auto;padding:50px 0">
-    <div class="bg"><img src="https://z-cdn-media.chatglm.cn/files/5a59f1d1-ca56-4c5b-a1bb-6c6c6473e3d5.png?auth_key=1885836236-9b20f04ed3dc42d1a5973ab07ffb846a-0-ec94df1896ff2e3bd7345434e4bef247" alt="" loading="lazy"></div>
-    <div class="ct text-center">
-      <div class="rv">
-        <p class="font-sans text-gold-600 text-[9px] tracking-[.35em] uppercase mb-2">Kirim Ucapan</p>
-        <h2 class="font-script text-[2.4rem] text-rose-700 mb-1.5">Kartu Ucapan</h2>
-        <p class="font-sans text-rose-600/50 text-[12px] mb-6">Kirimkan doa & ucapan terbaik via WhatsApp</p>
-      </div>
-      <div class="card rvs" style="transition-delay:.2s">
-        <div class="text-3xl mb-3">💌</div>
-        <p class="font-serif text-rose-600 text-sm italic mb-5">Berikan ucapan & doa terbaik<br>untuk Azka & Kirana</p>
-        <input id="gName" type="text" placeholder="Nama Anda" class="inp mb-3">
-        <textarea id="gMsg" rows="3" placeholder="Tulis ucapan & doa Anda..." class="inp inp-ta mb-4"></textarea>
-        <button onclick="sendWA()" class="wa-btn w-full inline-flex items-center justify-center gap-2 font-sans text-[10px] tracking-[.2em] uppercase px-6 py-3 rounded-full">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Kirim via WhatsApp
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- RSVP -->
-  <section class="pg" style="min-height:auto;padding:50px 0">
-    <div class="bg"><img src="https://z-cdn-media.chatglm.cn/files/5a59f1d1-ca56-4c5b-a1bb-6c6c6473e3d5.png?auth_key=1885836236-9b20f04ed3dc42d1a5973ab07ffb846a-0-ec94df1896ff2e3bd7345434e4bef247" alt="" loading="lazy"></div>
-    <div class="ct text-center">
-      <div class="rv">
-        <p class="font-sans text-gold-600 text-[9px] tracking-[.35em] uppercase mb-2">Konfirmasi Kehadiran</p>
-        <h2 class="font-script text-[2.4rem] text-rose-700 mb-6">RSVP</h2>
-      </div>
-      <div class="card rvs" style="transition-delay:.2s">
-        <div class="text-2xl mb-3">💐</div>
-        <input id="rName" type="text" placeholder="Nama Anda" class="inp mb-3">
-        <select id="rStat" class="inp mb-3">
-          <option value="" disabled selected>Konfirmasi Kehadiran</option>
-          <option value="Hadir">✅ Hadir</option>
-          <option value="Tidak Hadir">❌ Tidak Hadir</option>
-          <option value="Masih Ragu">🤔 Masih Ragu</option>
-        </select>
-        <input id="rGuest" type="number" min="1" max="5" placeholder="Jumlah Tamu" class="inp mb-4">
-        <button onclick="submitRSVP()" class="rsvp-btn w-full bg-gradient-to-r from-rose-600 to-rose-500 text-white font-sans text-[10px] tracking-[.2em] uppercase px-6 py-3 rounded-full border border-rose-400/25">
-          Kirim Konfirmasi
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- CLOSING -->
-  <section class="pg">
-    <div class="bg"><img src="https://z-cdn-media.chatglm.cn/files/5a59f1d1-ca56-4c5b-a1bb-6c6c6473e3d5.png?auth_key=1885836236-9b20f04ed3dc42d1a5973ab07ffb846a-0-ec94df1896ff2e3bd7345434e4bef247" alt="" loading="lazy"></div>
-    <div class="ct text-center">
-      <div class="rv">
-        <div class="text-3xl mb-3">🌸</div>
-        <p class="font-serif text-rose-700/70 text-base italic leading-relaxed mb-5 px-1">Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kami.</p>
-        <div class="sep mb-5"><span class="ln"></span><span>💐</span><span class="ln"></span></div>
-        <p class="font-serif text-rose-700/70 text-base italic mb-2">Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
-        <div class="my-6">
-          <h2 class="font-script text-[3rem] text-rose-700 glow leading-tight">Azka</h2>
-          <span class="text-gold-400 text-lg font-serif">&amp;</span>
-          <h2 class="font-script text-[3rem] text-rose-700 glow leading-tight mt-0.5">Kirana</h2>
-        </div>
-        <div class="flex items-center justify-center gap-3 mt-4">
-          <span class="block w-12 h-px bg-gradient-to-r from-transparent to-gold-400"></span>
-          <span class="text-rose-300 text-base">🌹</span>
-          <span class="block w-12 h-px bg-gradient-to-l from-transparent to-gold-400"></span>
-        </div>
-        <p class="font-sans text-rose-400/40 text-[9px] tracking-[.3em] uppercase mt-6">#AzkaKiranaWedding</p>
-      </div>
-    </div>
-  </section>
-
-</main>
+<nav class="nav-bar" id="navBar" aria-label="Navigasi slide">
+  <button class="nav-btn" id="prevBtn" onclick="prevSlide()" aria-label="Slide sebelumnya"><i class="fas fa-chevron-left"></i></button>
+  <div class="dots" id="dots"></div>
+  <button class="nav-btn" id="nextBtn" onclick="nextSlide()" aria-label="Slide berikutnya"><i class="fas fa-chevron-right"></i></button>
+</nav>
 
 <script>
-let aCtx=null,mPlay=false,mGain=null;
-function initM(){aCtx=new(window.AudioContext||window.webkitAudioContext)();mGain=aCtx.createGain();mGain.gain.value=0;mGain.connect(aCtx.destination);
-const N=[{f:523.25,d:.8},{f:659.25,d:.8},{f:783.99,d:1.2},{f:698.46,d:.8},{f:659.25,d:.8},{f:587.33,d:1.2},{f:523.25,d:.8},{f:493.88,d:.8},{f:523.25,d:1.2},{f:587.33,d:.8},{f:659.25,d:.8},{f:783.99,d:1.6},{f:698.46,d:.8},{f:659.25,d:.8},{f:587.33,d:.8},{f:523.25,d:1.6},{f:440,d:.8},{f:493.88,d:.8},{f:523.25,d:1.2},{f:587.33,d:.8},{f:523.25,d:1.6}];
-let t=aCtx.currentTime+.1;function lp(){N.forEach(n=>{const o=aCtx.createOscillator(),g=aCtx.createGain();o.type='sine';o.frequency.value=n.f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.07,t+.08);g.gain.setValueAtTime(.07,t+n.d*.7);g.gain.linearRampToValueAtTime(0,t+n.d);o.connect(g);g.connect(mGain);o.start(t);o.stop(t+n.d+.05);t+=n.d});setTimeout(lp,N.reduce((a,n)=>a+n.d,0)*1000)}lp()}
-function toggleMusic(){const b=document.getElementById('mBtn');if(!aCtx)initM();if(!mPlay){aCtx.resume();mGain.gain.linearRampToValueAtTime(.1,aCtx.currentTime+1.5);mPlay=true;b.classList.add('on')}else{mGain.gain.linearRampToValueAtTime(0,aCtx.currentTime+1.5);mPlay=false;b.classList.remove('on')}}
+/* ===== KONFIGURASI BACKGROUND ===== */
+const OPENING_BG = 'https://z-cdn-media.chatglm.cn/files/3ce8c2f6-70fa-4eed-a0a3-9b9902e65370.jpg?auth_key=1886377923-9448954944b04f9bbee8113e1b4b46ae-0-bfd3ea0c3a9b8b0c0c8e6fca0473946b';
+const SLIDES_BG  = 'https://z-cdn-media.chatglm.cn/files/31206aca-fd7f-48df-b57d-c9e8599b247f.jpg?auth_key=1886377923-7143c214834049c685a8be58628546af-0-239bb569edca25ee45fb36058ade7a10';
 
-function openInvitation(){const c=document.getElementById('cover'),d=document.getElementById('doors'),m=document.getElementById('main'),b=document.getElementById('mBtn');
-c.classList.add('hide-cover');setTimeout(()=>d.classList.add('door-open'),250);setTimeout(()=>d.classList.add('gone'),2100);
-setTimeout(()=>{m.style.opacity='1';b.classList.add('show');startPetals();if(!mPlay)toggleMusic()},700)}
+/* Set backgrounds */
+document.getElementById('s1bg').style.backgroundImage = 'url(' + OPENING_BG + ')';
+document.querySelectorAll('.s-bg').forEach(el => {
+  el.style.backgroundImage = 'url(' + SLIDES_BG + ')';
+});
 
-const pC=['#ffb3c1','#ff8fa3','#ffc2d1','#ffe0e6','#f4a0b5'];
-function mkP(){const c=document.getElementById('petals');if(!c)return;const p=document.createElement('div');p.className='petal';const s=Math.random()*12+7,col=pC[Math.floor(Math.random()*pC.length)],l=Math.random()*100,dur=Math.random()*5+7,del=Math.random()*1.5,dx=(Math.random()-.5)*180;
-p.style.cssText=`left:${l}vw;width:${s}px;height:${s*1.3}px;--dx:${dx}px;animation:pFall ${dur}s ${del}s linear forwards`;
-p.innerHTML=`<svg viewBox="0 0 20 30" fill="${col}" opacity=".75"><path d="M10 0C10 0 18 10 18 18C18 24 14 30 10 30C6 30 2 24 2 18C2 10 10 0 10 0Z"/></svg>`;c.appendChild(p);setTimeout(()=>p.remove(),(dur+del)*1000)}
-function startPetals(){for(let i=0;i<6;i++)setTimeout(mkP,i*250);setInterval(mkP,1400)}
+/* ===== MUSIC ===== */
+const musicAudio = document.getElementById('bgMusic');
+musicAudio.loop = true;
+musicAudio.volume = 0.5;
+let musicPlaying = false;
 
-function uCD(){const w=new Date('2026-07-25T08:00:00+08:00'),n=new Date(),df=w-n;
-if(df<=0){['cd-d','cd-h','cd-m','cd-s'].forEach(id=>document.getElementById(id).textContent='00');return}
-document.getElementById('cd-d').textContent=String(Math.floor(df/864e5)).padStart(2,'0');
-document.getElementById('cd-h').textContent=String(Math.floor(df%864e5/36e5)).padStart(2,'0');
-document.getElementById('cd-m').textContent=String(Math.floor(df%36e5/6e4)).padStart(2,'0');
-document.getElementById('cd-s').textContent=String(Math.floor(df%6e4/1e3)).padStart(2,'0')}
-setInterval(uCD,1e3);uCD();
+function toggleMusic(){
+  const btn=document.getElementById('musicBtn'),w=btn.querySelectorAll('.sound-wave');
+  if(musicPlaying){
+    musicAudio.pause();
+    musicPlaying=false;
+    btn.classList.remove('playing');
+    w.forEach(v=>v.style.display='none');
+    showToast('Musik dimatikan');
+  } else {
+    musicAudio.play().then(()=>{
+      musicPlaying=true;
+      btn.classList.add('playing');
+      w.forEach(v=>v.style.display='block');
+      showToast('Musik diputar');
+    }).catch(()=>{
+      showToast('Klik tombol musik untuk memutar lagu');
+    });
+  }
+}
+function startMusicAuto(){
+  document.getElementById('musicBtn').classList.add('visible');
+  musicAudio.play().then(()=>{
+    musicPlaying=true;
+    document.getElementById('musicBtn').classList.add('playing');
+    document.getElementById('musicBtn').querySelectorAll('.sound-wave').forEach(w=>w.style.display='block');
+  }).catch(()=>{
+    musicPlaying=false;
+    document.addEventListener('click', function fc(){
+      if(!musicPlaying){
+        musicAudio.play().then(()=>{
+          musicPlaying=true;
+          document.getElementById('musicBtn').classList.add('playing');
+          document.getElementById('musicBtn').querySelectorAll('.sound-wave').forEach(w=>w.style.display='block');
+        });
+      }
+      document.removeEventListener('click', fc);
+    }, {once:false});
+  });
+}
 
-function setupRv(){const o=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('v')})},{threshold:.12,rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.rv,.rvl,.rvr,.rvs').forEach(el=>o.observe(el))}
+/* ===== NAVIGATION ===== */
+let current=0;const total=9;let envelopeOpened=false,confettiLaunched=false;
+const dotsEl=document.getElementById('dots');
+for(let i=0;i<total;i++){const d=document.createElement('button');d.className='dot'+(i===0?' active':'');d.setAttribute('aria-label','Slide '+(i+1));d.onclick=()=>goToSlide(i);dotsEl.appendChild(d)}
+function goToSlide(n){if(n<0||n>=total||n===current)return;if(n===0&&envelopeOpened)return;document.getElementById('s'+(current+1)).classList.remove('active');current=n;document.getElementById('s'+(current+1)).classList.add('active');updateNav();if(current===total-1&&!confettiLaunched){confettiLaunched=true;setTimeout(launchConfetti,400)}document.getElementById('s'+(current+1)).scrollTop=0}
+function nextSlide(){goToSlide(current+1)}
+function prevSlide(){goToSlide(current-1)}
+function updateNav(){dotsEl.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===current));document.getElementById('prevBtn').disabled=current<=(envelopeOpened?1:0);document.getElementById('nextBtn').disabled=current>=total-1}
 
-function sendWA(){const nm=document.getElementById('gName').value.trim(),mg=document.getElementById('gMsg').value.trim();
-if(!nm){showT('⚠️ Mohon isi nama Anda');return}
-const t=`🌸 *Ucapan untuk Azka & Kirana* 🌸\n\nDari: ${nm}\n\n"${mg||'Semoga menjadi keluarga yang sakinah, mawaddah, warahmah. Aamiin.'}"\n\n_Bismillaahirrahmaanirrahiim_`;
-window.open(`https://wa.me/?text=${encodeURIComponent(t)}`,'_blank');showT('✅ Membuka WhatsApp...')}
+function openEnvelope(){if(envelopeOpened)return;envelopeOpened=true;document.getElementById('envelope').classList.add('opened');document.getElementById('tapHint').classList.add('hide');setTimeout(()=>{document.getElementById('poeticIntro').classList.add('show')},800);setTimeout(()=>{document.getElementById('navBar').classList.add('visible');startMusicAuto();goToSlide(1)},5000)}
 
-function submitRSVP(){const nm=document.getElementById('rName').value.trim(),st=document.getElementById('rStat').value,gu=document.getElementById('rGuest').value;
-if(!nm){showT('⚠️ Mohon isi nama Anda');return}if(!st){showT('⚠️ Pilih konfirmasi kehadiran');return}
-const t=`📋 *Konfirmasi Kehadiran*\n\nNama: ${nm}\nStatus: ${st}${gu?'\nJumlah Tamu: '+gu:''}\n\nUntuk pernikahan Azka & Kirana\n25-26 Juli 2026`;
-window.open(`https://wa.me/?text=${encodeURIComponent(t)}`,'_blank');showT('✅ Terima kasih! Dikirim via WhatsApp')}
+function openLightbox(el){const img=el.querySelector('img');if(!img)return;const o=document.createElement('div');o.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:250;display:flex;align-items:center;justify-content:center;cursor:pointer;animation:scaleIn .3s ease';const b=document.createElement('img');b.src=img.src;b.style.cssText='max-width:88vw;max-height:82vh;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.5);animation:scaleIn .4s ease';o.appendChild(b);o.onclick=()=>o.remove();document.body.appendChild(o)}
 
-function copyClip(t,l){navigator.clipboard.writeText(t).then(()=>showT(`✅ ${l} berhasil disalin!`)).catch(()=>{const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');document.body.removeChild(a);showT(`✅ ${l} berhasil disalin!`)})}
+let tx=0,ty=0;
+document.addEventListener('touchstart',e=>{tx=e.changedTouches[0].screenX;ty=e.changedTouches[0].screenY},{passive:true});
+document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].screenX-tx,dy=e.changedTouches[0].screenY-ty;if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>50){dx<0?nextSlide():prevSlide()}},{passive:true});
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowDown')nextSlide();if(e.key==='ArrowLeft'||e.key==='ArrowUp')prevSlide()});
 
-function showT(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800)}
+function launchConfetti(){const colors=['#f8a4c8','#c9a4e8','#a4d8c8','#f0c860','#d4a574','#f8d0e0','#d0c8f0','#f8c8a4'];for(let i=0;i<90;i++){const el=document.createElement('div');el.className='confetti';const c=colors[Math.floor(Math.random()*colors.length)];const sh=['circle','rect','ribbon'][Math.floor(Math.random()*3)];const s=6+Math.random()*10;el.style.left=Math.random()*100+'vw';el.style.top='-20px';el.style.width=s+'px';el.style.height=sh==='ribbon'?s*2.5+'px':s+'px';el.style.background=c;el.style.borderRadius=sh==='circle'?'50%':sh==='ribbon'?'3px':'2px';el.style.opacity=.8+Math.random()*.2;el.style.animation=`confettiFall ${2.5+Math.random()*3}s ease-in forwards`;el.style.animationDelay=Math.random()*1.5+'s';document.body.appendChild(el);setTimeout(()=>el.remove(),6000)}}
 
-document.addEventListener('DOMContentLoaded',()=>{lucide.createIcons();setupRv()});
+function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)}
+document.querySelectorAll('.sw').forEach(sw=>{sw.addEventListener('click',()=>{showToast('Warna: '+(sw.getAttribute('title')||'Warna'))})});
 </script>
 </body>
 </html>
