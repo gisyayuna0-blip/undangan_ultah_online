@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="https://gisyayuna0-blip.github.io/undangan_ultah_online/konser.jpg">
+    <meta property="og:image" content="https://gisyayuna0-blip.github.io/undangan_ultah_online/ultah.jpg">
     <title>Birthday Invitation — Admin Panel</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -1302,7 +1302,7 @@ function copyIndividual(name) {
 
 function buildLink() {
     const slug = $('fSlug').value.trim().replace(/\s+/g, '-').toLowerCase();
-    const link = 'birthday.invite/' + (slug || '');
+    const link = 'undangan_ultah_online/' + (slug || '');
     $('linkOut').textContent = link;
     return link;
 }
