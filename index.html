@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Azka & Kirana Wedding</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<script>
+tailwind.config={theme:{extend:{fontFamily:{script:['"Great Vibes"','cursive'],serif:['"Cormorant Garamond"','serif'],sans:['"Montserrat"','sans-serif']},colors:{rose:{50:'#fff5f7',100:'#ffe0e6',200:'#ffb3c1',300:'#ff8fa3',400:'#ff758f',500:'#ff4d6d',600:'#c9184a',700:'#a4133c',800:'#800f2f',900:'#590d22'},gold:{50:'#fdf9ef',100:'#f9f0d4',200:'#f2dea6',300:'#e9c96e',400:'#dfb44a',500:'#c9952c',600:'#a67620',700:'#7d5a18',800:'#5c4214',900:'#3d2c0e'},cream:'#fdf8f4'}}}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Montserrat',sans-serif;overflow-x:hidden;background:#1a0a10}
+
+#cover{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:#0d0508;transition:opacity 1.2s ease,visibility 1.2s ease}
+#cover.hide-cover{opacity:0;visibility:hidden;pointer-events:none}
+.cover-bg{position:absolute;inset:0;overflow:hidden}
+.cover-bg img{width:100%;height:100%;object-fit:cover;object-position:center center}
+.cover-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,3,10,0.3) 0%,rgba(15,3,10,0.1) 35%,rgba(15,3,10,0.2) 65%,rgba(15,3,10,0.55) 100%)}
+.cover-content{position:relative;z-index:10;text-align:center;width:100%;padding:24px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%}
+
+.door-wrap{position:fixed;inset:0;z-index:9998;pointer-events:none;display:flex}
+.door-l,.door-r{position:absolute;top:0;width:50%;height:100%;transition:transform 1.6s cubic-bezier(.77,0,.175,1)}
+.door-l{left:0;transform-origin:left;background:linear-gradient(135deg,#2a0f1a,#1a0a10 60%,#2a0f1a);border-right:1.5px solid rgba(201,149,44,0.2);display:flex;align-items:center;justify-content:flex-end;padding-right:18px}
+.door-r{right:0;transform-origin:right;background:linear-gradient(225deg,#2a0f1a,#1a0a10 60%,#2a0f1a);border-left:1.5px solid rgba(201,149,44,0.2);display:flex;align-items:center;justify-content:flex-start;padding-left:18px}
+.door-l::after,.door-r::after{content:'';width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,#e9c96e,#c9952c);box-shadow:0 0 12px rgba(201,149,44,0.4)}
+.door-open .door-l{transform:perspective(1200px) rotateY(-105deg)}
+.door-open .door-r{transform:perspective(1200px) rotateY(105deg)}
+.door-wrap.gone{opacity:0;transition:opacity .4s ease .3s;pointer-events:none}
+
+.petal{position:fixed;z-index:9990;pointer-events:none;will-change:transform,opacity}
+@keyframes pFall{0%{transform:translateY(-5vh) rotate(0) translateX(0);opacity:0}8%{opacity:.9}88%{opacity:.7}100%{transform:translateY(108vh) rotate(540deg) translateX(var(--dx));opacity:0}}
+
+@keyframes gPulse{0%,100%{text-shadow:0 0 15px rgba(255,182,193,.35),0 0 35px rgba(255,182,193,.15),0 0 55px rgba(201,149,44,.1)}50%{text-shadow:0 0 25px rgba(255,182,193,.55),0 0 50px rgba(255,182,193,.25),0 0 80px rgba(201,149,44,.2)}}
+.glow{animation:gPulse 3s ease-in-out infinite}
+
+.pg{position:relative;width:100%;min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.pg .bg{position:absolute;inset:0;z-index:0}
+.pg .bg img{width:100%;height:100%;object-fit:cover;display:block}
+.pg .bg::after{content:'';position:absolute;inset:0;background:rgba(253,248,244,.83)}
+.pg .ct{position:relative;z-index:1;width:100%;padding:40px 22px}
+
+.rv{opacity:0;transform:translateY(35px);transition:opacity .7s ease,transform .7s ease}
+.rv.v{opacity:1;transform:translateY(0)}
+.rvl{opacity:0;transform:translateX(-35px);transition:opacity .7s ease,transform .7s ease}
+.rvl.v{opacity:1;transform:translateX(0)}
+.rvr{opacity:0;transform:translateX(35px);transition:opacity .7s ease,transform .7s ease}
+.rvr.v{opacity:1;transform:translateX(0)}
+.rvs{opacity:0;transform:scale(.88);transition:opacity .7s ease,transform .7s ease}
+.rvs.v{opacity:1;transform:scale(1)}
+
+.rsvp-btn{position:relative;overflow:hidden;transition:all .4s cubic-bezier(.175,.885,.32,1.275)}
+.rsvp-btn::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:rgba(255,255,255,.18);transform:translate(-50%,-50%);transition:width .5s,height .5s}
+.rsvp-btn:hover::before,.rsvp-btn:active::before{width:300px;height:300px}
+.rsvp-btn:hover,.rsvp-btn:active{transform:translateY(-2px) scale(1.04);box-shadow:0 12px 35px rgba(201,149,44,.35)}
+
+.cd-box{background:linear-gradient(135deg,rgba(255,255,255,.92),rgba(255,240,245,.92));backdrop-filter:blur(8px);border:1px solid rgba(201,149,44,.18);border-radius:14px;padding:16px 12px;min-width:70px;text-align:center;box-shadow:0 6px 24px rgba(0,0,0,.06)}
+.cd-n{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:#a4133c;line-height:1}
+.cd-l{font-size:.58rem;text-transform:uppercase;letter-spacing:1.8px;color:#c9952c;margin-top:3px;font-weight:500}
+
+.m-btn{position:fixed;bottom:16px;right:16px;z-index:9980;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#a4133c,#c9184a);border:1.5px solid rgba(201,149,44,.45);color:#e9c96e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 3px 16px rgba(0,0,0,.3);transition:all .3s ease;opacity:0;transform:scale(0)}
+.m-btn.show{opacity:1;transform:scale(1)}
+.m-btn:hover{transform:scale(1.1)}
+.m-btn.on{animation:mPulse 1.5s ease-in-out infinite}
+@keyframes mPulse{0%,100%{box-shadow:0 3px 16px rgba(0,0,0,.3)}50%{box-shadow:0 3px 24px rgba(169,19,60,.5),0 0 0 6px rgba(169,19,60,.08)}}
+
+.tl-line{position:absolute;left:16px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,transparent,#e9c96e,#ff8fa3,#e9c96e,transparent)}
+.tl-dot{width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,#e9c96e,#c9952c);border:2.5px solid #fdf8f4;box-shadow:0 0 0 2.5px rgba(201,149,44,.25);position:absolute;left:10px;z-index:2}
+
+.gal{overflow:hidden;border-radius:10px;position:relative}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;display:block}
+.gal:active img{transform:scale(1.06)}
+
+.sep{display:flex;align-items:center;justify-content:center;gap:10px;opacity:.55}
+.sep .ln{width:50px;height:1px;background:linear-gradient(to right,transparent,#c9952c,transparent)}
+
+.wa-btn{background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;transition:all .3s ease;box-shadow:0 4px 14px rgba(37,211,102,.25)}
+.wa-btn:hover,.wa-btn:active{transform:translateY(-2px);box-shadow:0 7px 22px rgba(37,211,102,.35)}
+
+.toast{position:fixed;bottom:70px;left:50%;transform:translateX(-50%) translateY(90px);z-index:99999;background:#1a0a10;color:#e9c96e;padding:12px 24px;border-radius:10px;font-size:.78rem;border:1px solid rgba(201,149,44,.25);box-shadow:0 8px 30px rgba(0,0,0,.4);transition:transform .4s cubic-bezier(.175,.885,.32,1.275);white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+.card{background:linear-gradient(135deg,rgba(255,255,255,.94),rgba(255,240,245,.94));backdrop-filter:blur(8px);border:1px solid rgba(201,149,44,.15);border-radius:14px;padding:20px;text-align:center;box-shadow:0 6px 24px rgba(0,0,0,.05);transition:all .3s ease}
+
+.map-wrap{border-radius:14px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.08);border:1.5px solid rgba(201,149,44,.15)}
+
+@keyframes fl{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(4deg)}}
+.fl{animation:fl 3.5s ease-in-out infinite}
+
+@keyframes sBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+.s-bounce{animation:sBounce 2s ease-in-out infinite}
+
+.inp{width:100%;padding:12px 16px;border-radius:50px;border:1px solid rgba(201,149,44,.2);background:rgba(255,255,255,.85);color:#800f2f;font-size:.82rem;font-family:'Montserrat',sans-serif;text-align:center;outline:none;transition:all .3s ease}
+.inp::placeholder{color:#ffb3c1}
+.inp:focus{border-color:#e9c96e;box-shadow:0 0 0 3px rgba(201,149,44,.12)}
+.inp-ta{border-radius:16px;resize:none;text-align:left;padding:14px 16px}
+select.inp{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23c9952c' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+</style>
+</head>
+<body>
+
+<button id="mBtn" class="m-btn" onclick="toggleMusic()"><i data-lucide="music" style="width:18px;height:18px"></i></button>
+<div id="toast" class="toast"></div>
+
+<!-- ===== COVER — BACKGROUND UTAMA FULL SCREEN ===== -->
+<div id="cover">
+  <div class="cover-bg">
+    <img src="https://z-cdn-media.chatglm.cn/files/c84eb5ec-eca2-460b-807c-015349adfdf7.png?auth_key=1885837166-a60562c2660d42b78b79e07cef802c8b-0-14a9465bc582c82fa2113b1dce90a3b9" alt="Wedding Cover">
+    <div class="cover-overlay"></div>
+  </div>
+  <div class="cover-content">
+    <p class="font-sans text-rose-100/80 text-[10px] tracking-[.35em] uppercase mb-3 font-light">The Wedding of</p>
+    <h1 class="font-script text-[3.2rem] leading-tight text-white glow mb-0.5">Azka</h1>
+    <div class="flex items-center justify-center gap-3 my-2.5">
+      <span class="block w-10 h-px bg-gradient-to-r from-transparent to-gold-300/60"></span>
+      <span class="text-gold-300 text-xl font-serif">&amp;</span>
+      <span class="block w-10 h-px bg-gradient-to-l from-transparent to-gold-300/60"></span>
+    </div>
+    <h1 class="font-script text-[3.2rem] leading-tight text-white glow mb-5">Kirana</h1>
+    <p class="font-sans text-rose-100/50 text-[9px] tracking-[.3em] uppercase mb-8">25 &amp; 26 · Juli · 2026</p>
+    <button onclick="openInvitation()" class="rsvp-btn bg-gradient-to-r from-gold-500 via-gold-400 to-gold-500 text-white font-sans text-[10px] tracking-[.25em] uppercase px-9 py-3.5 rounded-full border border-gold-300/25 shadow-lg shadow-gold-500/20">
+      Buka Undangan
+    </button>
+    <div class="mt-8 s-bounce">
+      <i data-lucide="chevron-down" style="width:20px;height:20px" class="text-white/30 mx-auto"></i>
+    </div>
+  </div>
+</div>
+
+<div id="doors" class="door-wrap"><div class="door-l"></div><div class="door-r"></div></div>
+<div id="petals"></div>
+
+<main id="main" style="opacity:0;transition:opacity 1s ease .6s">
+
+  <!-- BISMILLAH -->
+  <section class="pg">
+    <div class="bg"><img src="https://z-cdn-media.chatglm.cn/files/5a59f1d1-ca56-4c5b-a1bb-6c6c6473e3d5.png?auth_key=1885836236-9b20f04ed3dc42d1a5973ab07ffb846a-0-ec94df1896ff2e3bd7345434e4bef247" alt="" loading="lazy"></div>
+    <div class="ct flex flex-col items-center justify-center text-center h-full">
+      <div class="rv">
+        <p class="font-serif text-rose-700/80 text-lg italic leading-relaxed">Bismillaahirrahmaanirrahiim</p>
+        <div class="sep mt-5 mb-5"><span class="ln"></span><span>🌸</span><span class="ln"></span></div>
+        <p class="font-sans text-rose-800/55 text-[13px] leading-[1.8] px-2">Assalamu'alaikum Warahmatullahi Wabarakatuh<br><br>Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i serta teman-teman sekalian untuk menghadiri acara pernikahan kami.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMPELAI -->
+  <section class="pg" style="min-height:auto;padding:60px 0">
+    <div class="bg"><img src="https://z-cdn-media.chatglm.cn/files/5a59f1d1-ca56-4c5b-a1bb-6c6c6473e3d5.png?auth_key=1885836236-9b20f04ed3dc42d1a5973ab07ffb846a-0-ec94df1896ff2e3bd7345434e4bef247" alt="" loading="lazy"></div>
+    <div class="ct text-center">
+      <div class="rv"><p class="font-sans text-gold-600 text-[9px] tracking-[.35em] uppercase mb-1.5">Mempelai Pria</p></div>
+      <div class="rvs" style="transition-delay:.15s">
+        <h2 class="font-script text-[2.6rem] leading-tight text-rose-700 glow mb-1">Muhammad Azka Ridzik</h2>
+        <p class="font-serif text-rose-400 italic text-base mb-3">Azka</p>
+      </div>
+      <div class="rv" style="transition-delay:.3s">
+        <div class="flex items-center justify-center gap-2 mb-1.5"><span>🌹</span><span class="text-gold-500 text-[9px] tracking-[.2em] uppercase">Putra dari</span><span>🌹</span></div>
+        <p class="font-serif text-rose-800 text-base">Rozak Shiddiq <span class="text-gold-500 mx-1.5">&amp;</span> Chintia Dewi</p>
+      </div>
+      <div class="my-7 rv"><div class="flex items-center justify-center gap-3"><span class="block w-12 h-px bg-gradient-to-r from-transparent to-gold-400"></span><span class="text-2xl">💐</span><span class="block w-12 h-px bg-gradient-to-l from-transparent to-gold-400"></span></div></div>
+      <div class="rv" style="transition-delay:.15s"><p class="font-sans text-gold-600 text-[9px] tracking-[.35em] uppercase mb-1.5">Mempelai Wanita</p></div>
+      <div class="rvs" style="transition-delay:.3s">
+        <h2 class="font-script text-[2.6rem] leading-tight text-rose-700 glow mb-1">Cahya Putri Kirana</h2>
+        <p class="font-serif text-rose-400 italic text-base mb-3">Kirana</p>
+      </div>
+      <div class="rv" style="transition-delay:.45s">
+        <div class="flex items-center justify-center gap-2 mb-1.5"><span>🌹</span><span class="text-gold-500 text-[9px] tracking-[.2em] uppercase">Putri dari</span><span>🌹</span></div>
+        <p class="font-serif text-rose-800 text-base">Ahmad Zailani <span class="text-gold-500 mx-1.5">&amp;</span> Marry Putri</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="pg">
+    <div class="bg"><img src="https://z-cdn-media.chatglm.cn/files/5a59f1d1-ca56-4c5b-a1bb-6c6c6473e3d5.png?auth_key=1885836236-9b20f04ed3dc42d1a5973ab07ffb846a-0-ec94df1896ff2e3bd7345434e4bef247" alt="" loading="lazy"></div>
+    <div class="ct text-center">
+      <div class="rv">
+        <p class="font-sans text-gold-600 text-[9px] tracking-[.35em] uppercase mb-2">Menuju Hari Bahagia</p>
+        <h2 class="font-script text-[2.4rem] text-rose-700 mb-7">Save The Date</h2>
+      </div>
+      <div class="flex justify-center gap-2.5 rvs" style="transition-delay:.2s">
+        <div class="cd-box"><div class="cd-n" id="cd-d">00</div><div class="cd-l">Hari</div></div>
+        <div class="cd-box"><div class="cd-n" id="cd-h">00</div><div class="cd-l">Jam</div></div>
+        <div class="cd-box"><div class="cd-n" id="cd-m">00</div><div class="cd-l">Menit</div></div>
+        <div class="cd-box"><div class="cd-n" id="cd-s">00</div><div class="cd-l">Detik</div></div>
+      </div>
+      <div class="rv mt-6" style="transition-delay:.4s">
+        <p class="font-serif text-rose-500/70 italic text-sm">Sabtu, 25 Juli 2026 &amp; Minggu, 26 Juli 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACARA -->
+  <section class="pg" style="min-height:auto;padding:50px 0">
+    <div class="bg"><img src="https://z-cdn-media.chatglm.cn/files/5a59f1d1-ca56-4c5b-a1bb-6c6c6473e3d5.png?auth_key=1885836236-9b20f04ed3dc42d1a5973ab07ffb846a-0-ec94df1896ff2e3bd7345434e4bef247" alt="" loading="lazy"></div>
+    <div class="ct text-center">
+      <div class="rv">
+        <p class="font-sans text-gold-600 text-[9px] tracking-[.35em] uppercase mb-2">Jadwal Acara</p>
+        <h2 class="font-script text-[2.4rem] text-rose-700 mb-7">Waktu &amp; Tempat</h2>
+      </div>
+      <div class="space-y-4 px-2">
+        <div class="rvl" style="transition-delay:.15s">
+          <div class="card">
+            <div class="text-2xl mb-2 fl">🌸</div>
+            <p class="font-sans text-gold-600 text-[9px] tracking-[.25em] uppercase mb-0.5">Resepsi</p>
+            <h3 class="font-serif text-rose-700 text-xl font-semibold mb-1.5">Sabtu</h3>
+            <p class="font-serif text-rose-800 text-lg">25 Juli 2026</p>
+            <p class="font-sans text-rose-500 font-medium text-sm mb-2.5">08.00 WITA</p>
+            <div class="sep mb-2.5"><span class="ln"></span><span class="text-xs">✨</span><span class="ln"></span></div>
+            <p class="font-sans text-rose-600/60 text-xs leading-relaxed">Gedung Serba Guna<br>Banjarmasin</p>
+          </div>
+        </div>
+        <div class="rvr" style="transition-delay:.3s">
+          <div class="card">
+            <div class="text-2xl mb-2 fl" style="animation-delay:1.2s">🌺</div>
+            <p class="font-sans text-gold-600 text-[9px] tracking-[.25em] uppercase mb-0.5">Wedding</p>
+            <h3 class="font-serif text-rose-700 text-xl font-semibold mb-1.5">Minggu</h3>
+            <p class="font-serif text-rose-800 text-lg">26 Juli 2026</p>
+            <p class="font-sans text-rose-500 font-medium text-sm mb-2.5">09.00 WITA</p>
+            <div class="sep mb-2.5"><span class="ln"></span><span class="text-xs">✨</span><span class="ln"></span></div>
+            <p class="font-sans text-rose-600/60 text-xs leading-relaxed">Gedung Serba Guna<br>Banjarmasin</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PETA -->
+  <section class="pg">
+    <div class="bg"><img src="https://z-cdn-media.chatglm.cn/files/5a59f1d1-ca56-4c5b-a1bb-6c6c6473e3d5.png?auth_key=1885836236-9b20f04ed3dc42d1a5973ab07ffb846a-0-ec94df1896ff2e3bd7345434e4bef247" alt="" loading="lazy"></div>
+    <div class="ct text-center">
+      <div class="rv">
+        <p class="font-sans text-gold-600 text-[9px] tracking-[.35em] uppercase mb-2">Lokasi</p>
+        <h2 class="font-script text-[2.4rem] text-rose-700 mb-1.5">Peta Lokasi</h2>
+        <p class="font-sans text-rose-600/50 text-xs mb-5">Gedung Serba Guna Banjarmasin</p>
+      </div>
+      <div class="map-wrap rvs" style="transition-delay:.2s">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.0!2d114.59!3d-3.32!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwMTknMTIuMCJTIDExNMKwMzUnMjQuMCJF!5e0!3m2!1sid!2sid!4v1" width="100%" height="250" style="border:0;display:block" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="rv mt-4" style="transition-delay:.4s">
+        <a href="https://www.google.com/maps/search/Gedung+Serba+Guna+Banjarmasin" target="_blank" class="inline-flex items-center gap-1.5 rsvp-btn bg-gradient-to-r from-rose-600 to-rose-500 text-white font-sans text-[9px] tracking-[.2em] uppercase px-7 py-3 rounded-full">
+          <i data-lucide="map-pin" style="width:13px;height:13px"></i> Buka Maps
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOVE STORY -->
+  <section class="pg" style="min-height:auto;padding:50px 0">
+    <div class="bg"><img src="https://z-cdn-media.chatglm.cn/files/5a59f1d1-ca56-4c5b-a1bb-6c6c6473e3d5.png?auth_key=1885836236-9b20f04ed3dc42d1a5973ab07ffb846a-0-ec94df1896ff2e3bd7345434e4bef247" alt="" loading="lazy"></div>
+    <div class="ct text-center">
+      <div class="rv">
+        <p class="font-sans text-gold-600 text-[9px] tracking-[.35em] uppercase mb-2">Cerita Kami</p>
+        <h2 class="font-script text-[2.4rem] text-rose-700 mb-8">Love Story</h2>
+      </div>
+      <div class="relative pl-10 text-left space-y-8">
+        <div class="tl-line"></div>
+        <div class="relative rvl" style="transition-delay:.1s">
+          <div class="tl-dot" style="top:4px"></div>
+          <div class="text-lg mb-0.5">🌸</div>
+          <p class="font-sans text-gold-500 text-[8px] tracking-[.2em] uppercase mb-0.5">Pertama Bertemu</p>
+          <p class="font-serif text-rose-700 text-lg italic mb-1">Takdir Mempertemukan</p>
+          <p class="font-sans text-rose-800/50 text-[12px] leading-relaxed">Allah SWT mempertemukan dua hati di saat yang tak terduga. Senyum pertama yang menjadi awal dari segalanya.</p>
+        </div>
+        <div class="relative rvr" style="transition-delay:.2s">
+          <div class="tl-dot" style="top:4px"></div>
+          <div class="text-lg mb-0.5">💐</div>
+          <p class="font-sans text-gold-500 text-[8px] tracking-[.2em] uppercase mb-0.5">Semakin Dekat</p>
+          <p class="font-serif text-rose-700 text-lg italic mb-1">Memahami Satu Sama Lain</p>
+          <p class="font-sans text-rose-800/50 text-[12px] leading-relaxed">Waktu berjalan, rasa semakin tumbuh. Perbincangan ringan berubah menjadi obrolan panjang tentang masa depan.</p>
+        </div>
+        <div class="relative rvl" style="transition-delay:.3s">
+          <div class="tl-dot" style="top:4px"></div>
+          <div class="text-lg mb-0.5">🌹</div>
+          <p class="font-sans text-gold-500 text-[8px] tracking-[.2em] uppercase mb-0.5">Lamaran</p>
+          <p class="font-serif text-rose-700 text-lg italic mb-1">Janji Suci Untuk Selamanya</p>
+          <p class="font-sans text-rose-800/50 text-[12px] leading-relaxed">Dengan keridhaan Allah dan restu kedua orang tua, Azka meminang Kirana dengan penuh cinta dan ketulusan.</p>
+        </div>
+        <div class="relative rvr" style="transition-delay:.4s">
+          <div class="tl-dot" style="top:4px"></div>
+          <div class="text-lg mb-0.5">💍</div>
+          <p class="font-sans text-gold-500 text-[8px] tracking-[.2em] uppercase mb-0.5">Pernikahan</p>
+          <p class="font-serif text-rose-700 text-lg italic mb-1">Menyatukan Dua Jiwa</p>
+          <p class="font-sans text-rose-800/50 text-[12px] leading-relaxed">Hari yang dinantikan akhirnya tiba. Dengan izin-Nya, kami siap memulai bahtera rumah tangga bersama.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERI -->
+  <section class="pg" style="min-height:auto;padding:50px 0">
+    <div class="bg"><img src="https://z-cdn-media.chatglm.cn/files/5a59f1d1-ca56-4c5b-a1bb-6c6c6473e3d5.png?auth_key=1885836236-9b20f04ed3dc42d1a5973ab07ffb846a-0-ec94df1896ff2e3bd7345434e4bef247" alt="" loading="lazy"></div>
+    <div class="ct text-center">
+      <div class="rv">
+        <p class="font-sans text-gold-600 text-[9px] tracking-[.35em] uppercase mb-2">Momen Bahagia</p>
+        <h2 class="font-script text-[2.4rem] text-rose-700 mb-6">Galeri</h2>
+      </div>
+      <div class="grid grid-cols-2 gap-2.5 rvs" style="transition-delay:.2s">
+        <div class="gal aspect-[3/4] rounded-xl"><img src="https://picsum.photos/seed/akwed1/400/533" alt="G1" loading="lazy"></div>
+        <div class="gal aspect-[3/4] rounded-xl"><img src="https://picsum.photos/seed/akwed2/400/533" alt="G2" loading="lazy"></div>
+        <div class="gal aspect-[3/4] rounded-xl"><img src="https://picsum.photos/seed/akwed3/400/533" alt="G3" loading="lazy"></div>
+        <div class="gal aspect-[3/4] rounded-xl"><img src="https://picsum.photos/seed/akwed4/400/533" alt="G4" loading="lazy"></div>
+        <div class="gal aspect-[3/4] rounded-xl col-span-2 max-h-[220px]"><img src="https://picsum.photos/seed/akwed5/800/400" alt="G5" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEDDING GIFT -->
+  <section class="pg" style="min-height:auto;padding:50px 0">
+    <div class="bg"><img src="https://z-cdn-media.chatglm.cn/files/5a59f1d1-ca56-4c5b-a1bb-6c6c6473e3d5.png?auth_key=1885836236-9b20f04ed3dc42d1a5973ab07ffb846a-0-ec94df1896ff2e3bd7345434e4bef247" alt="" loading="lazy"></div>
+    <div class="ct text-center">
+      <div class="rv">
+        <p class="font-sans text-gold-600 text-[9px] tracking-[.35em] uppercase mb-2">Wedding Gift</p>
+        <h2 class="font-script text-[2.4rem] text-rose-700 mb-1.5">Amplop Digital</h2>
+        <p class="font-sans text-rose-600/50 text-[12px] mb-6 px-2 leading-relaxed">Doa restu Anda merupakan karunia yang sangat berarti. Jika ingin memberikan tanda kasih, kami menyediakan amplop digital.</p>
+      </div>
+      <div class="space-y-3.5 px-1">
+        <div class="card rvl" style="transition-delay:.15s">
+          <div class="text-2xl mb-2 fl">🏦</div>
+          <p class="font-sans text-gold-600 text-[9px] tracking-[.2em] uppercase mb-1">Bank BCA</p>
+          <p class="font-serif text-rose-700 text-xl font-semibold mb-0.5">1234567890</p>
+          <p class="font-sans text-rose-500/50 text-[11px] mb-2.5">a.n. Muhammad Azka Ridzik</p>
+          <button onclick="copyClip('1234567890','BCA')" class="inline-flex items-center gap-1 text-gold-600 text-[10px] tracking-wider active:opacity-60 transition-opacity"><i data-lucide="copy" style="width:11px;height:11px"></i> Salin</button>
+        </div>
+        <div class="card rvr" style="transition-delay:.3s">
+          <div class="text-2xl mb-2 fl" style="animation-delay:1.5s">🏦</div>
+          <p class="font-sans text-gold-600 text-[9px] tracking-[.2em] uppercase mb-1">Bank Mandiri</p>
+          <p class="font-serif text-rose-700 text-xl font-semibold mb-0.5">0987654321</p>
+          <p class="font-sans text-rose-500/50 text-[11px] mb-2.5">a.n. Cahya Putri Kirana</p>
+          <button onclick="copyClip('0987654321','Mandiri')" class="inline-flex items-center gap-1 text-gold-600 text-[10px] tracking-wider active:opacity-60 transition-opacity"><i data-lucide="copy" style="width:11px;height:11px"></i> Salin</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UCAPAN WA -->
+  <section class="pg" style="min-height:auto;padding:50px 0">
+    <div class="bg"><img src="https://z-cdn-media.chatglm.cn/files/5a59f1d1-ca56-4c5b-a1bb-6c6c6473e3d5.png?auth_key=1885836236-9b20f04ed3dc42d1a5973ab07ffb846a-0-ec94df1896ff2e3bd7345434e4bef247" alt="" loading="lazy"></div>
+    <div class="ct text-center">
+      <div class="rv">
+        <p class="font-sans text-gold-600 text-[9px] tracking-[.35em] uppercase mb-2">Kirim Ucapan</p>
+        <h2 class="font-script text-[2.4rem] text-rose-700 mb-1.5">Kartu Ucapan</h2>
+        <p class="font-sans text-rose-600/50 text-[12px] mb-6">Kirimkan doa & ucapan terbaik via WhatsApp</p>
+      </div>
+      <div class="card rvs" style="transition-delay:.2s">
+        <div class="text-3xl mb-3">💌</div>
+        <p class="font-serif text-rose-600 text-sm italic mb-5">Berikan ucapan & doa terbaik<br>untuk Azka & Kirana</p>
+        <input id="gName" type="text" placeholder="Nama Anda" class="inp mb-3">
+        <textarea id="gMsg" rows="3" placeholder="Tulis ucapan & doa Anda..." class="inp inp-ta mb-4"></textarea>
+        <button onclick="sendWA()" class="wa-btn w-full inline-flex items-center justify-center gap-2 font-sans text-[10px] tracking-[.2em] uppercase px-6 py-3 rounded-full">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Kirim via WhatsApp
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="pg" style="min-height:auto;padding:50px 0">
+    <div class="bg"><img src="https://z-cdn-media.chatglm.cn/files/5a59f1d1-ca56-4c5b-a1bb-6c6c6473e3d5.png?auth_key=1885836236-9b20f04ed3dc42d1a5973ab07ffb846a-0-ec94df1896ff2e3bd7345434e4bef247" alt="" loading="lazy"></div>
+    <div class="ct text-center">
+      <div class="rv">
+        <p class="font-sans text-gold-600 text-[9px] tracking-[.35em] uppercase mb-2">Konfirmasi Kehadiran</p>
+        <h2 class="font-script text-[2.4rem] text-rose-700 mb-6">RSVP</h2>
+      </div>
+      <div class="card rvs" style="transition-delay:.2s">
+        <div class="text-2xl mb-3">💐</div>
+        <input id="rName" type="text" placeholder="Nama Anda" class="inp mb-3">
+        <select id="rStat" class="inp mb-3">
+          <option value="" disabled selected>Konfirmasi Kehadiran</option>
+          <option value="Hadir">✅ Hadir</option>
+          <option value="Tidak Hadir">❌ Tidak Hadir</option>
+          <option value="Masih Ragu">🤔 Masih Ragu</option>
+        </select>
+        <input id="rGuest" type="number" min="1" max="5" placeholder="Jumlah Tamu" class="inp mb-4">
+        <button onclick="submitRSVP()" class="rsvp-btn w-full bg-gradient-to-r from-rose-600 to-rose-500 text-white font-sans text-[10px] tracking-[.2em] uppercase px-6 py-3 rounded-full border border-rose-400/25">
+          Kirim Konfirmasi
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="pg">
+    <div class="bg"><img src="https://z-cdn-media.chatglm.cn/files/5a59f1d1-ca56-4c5b-a1bb-6c6c6473e3d5.png?auth_key=1885836236-9b20f04ed3dc42d1a5973ab07ffb846a-0-ec94df1896ff2e3bd7345434e4bef247" alt="" loading="lazy"></div>
+    <div class="ct text-center">
+      <div class="rv">
+        <div class="text-3xl mb-3">🌸</div>
+        <p class="font-serif text-rose-700/70 text-base italic leading-relaxed mb-5 px-1">Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kami.</p>
+        <div class="sep mb-5"><span class="ln"></span><span>💐</span><span class="ln"></span></div>
+        <p class="font-serif text-rose-700/70 text-base italic mb-2">Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+        <div class="my-6">
+          <h2 class="font-script text-[3rem] text-rose-700 glow leading-tight">Azka</h2>
+          <span class="text-gold-400 text-lg font-serif">&amp;</span>
+          <h2 class="font-script text-[3rem] text-rose-700 glow leading-tight mt-0.5">Kirana</h2>
+        </div>
+        <div class="flex items-center justify-center gap-3 mt-4">
+          <span class="block w-12 h-px bg-gradient-to-r from-transparent to-gold-400"></span>
+          <span class="text-rose-300 text-base">🌹</span>
+          <span class="block w-12 h-px bg-gradient-to-l from-transparent to-gold-400"></span>
+        </div>
+        <p class="font-sans text-rose-400/40 text-[9px] tracking-[.3em] uppercase mt-6">#AzkaKiranaWedding</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+let aCtx=null,mPlay=false,mGain=null;
+function initM(){aCtx=new(window.AudioContext||window.webkitAudioContext)();mGain=aCtx.createGain();mGain.gain.value=0;mGain.connect(aCtx.destination);
+const N=[{f:523.25,d:.8},{f:659.25,d:.8},{f:783.99,d:1.2},{f:698.46,d:.8},{f:659.25,d:.8},{f:587.33,d:1.2},{f:523.25,d:.8},{f:493.88,d:.8},{f:523.25,d:1.2},{f:587.33,d:.8},{f:659.25,d:.8},{f:783.99,d:1.6},{f:698.46,d:.8},{f:659.25,d:.8},{f:587.33,d:.8},{f:523.25,d:1.6},{f:440,d:.8},{f:493.88,d:.8},{f:523.25,d:1.2},{f:587.33,d:.8},{f:523.25,d:1.6}];
+let t=aCtx.currentTime+.1;function lp(){N.forEach(n=>{const o=aCtx.createOscillator(),g=aCtx.createGain();o.type='sine';o.frequency.value=n.f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.07,t+.08);g.gain.setValueAtTime(.07,t+n.d*.7);g.gain.linearRampToValueAtTime(0,t+n.d);o.connect(g);g.connect(mGain);o.start(t);o.stop(t+n.d+.05);t+=n.d});setTimeout(lp,N.reduce((a,n)=>a+n.d,0)*1000)}lp()}
+function toggleMusic(){const b=document.getElementById('mBtn');if(!aCtx)initM();if(!mPlay){aCtx.resume();mGain.gain.linearRampToValueAtTime(.1,aCtx.currentTime+1.5);mPlay=true;b.classList.add('on')}else{mGain.gain.linearRampToValueAtTime(0,aCtx.currentTime+1.5);mPlay=false;b.classList.remove('on')}}
+
+function openInvitation(){const c=document.getElementById('cover'),d=document.getElementById('doors'),m=document.getElementById('main'),b=document.getElementById('mBtn');
+c.classList.add('hide-cover');setTimeout(()=>d.classList.add('door-open'),250);setTimeout(()=>d.classList.add('gone'),2100);
+setTimeout(()=>{m.style.opacity='1';b.classList.add('show');startPetals();if(!mPlay)toggleMusic()},700)}
+
+const pC=['#ffb3c1','#ff8fa3','#ffc2d1','#ffe0e6','#f4a0b5'];
+function mkP(){const c=document.getElementById('petals');if(!c)return;const p=document.createElement('div');p.className='petal';const s=Math.random()*12+7,col=pC[Math.floor(Math.random()*pC.length)],l=Math.random()*100,dur=Math.random()*5+7,del=Math.random()*1.5,dx=(Math.random()-.5)*180;
+p.style.cssText=`left:${l}vw;width:${s}px;height:${s*1.3}px;--dx:${dx}px;animation:pFall ${dur}s ${del}s linear forwards`;
+p.innerHTML=`<svg viewBox="0 0 20 30" fill="${col}" opacity=".75"><path d="M10 0C10 0 18 10 18 18C18 24 14 30 10 30C6 30 2 24 2 18C2 10 10 0 10 0Z"/></svg>`;c.appendChild(p);setTimeout(()=>p.remove(),(dur+del)*1000)}
+function startPetals(){for(let i=0;i<6;i++)setTimeout(mkP,i*250);setInterval(mkP,1400)}
+
+function uCD(){const w=new Date('2026-07-25T08:00:00+08:00'),n=new Date(),df=w-n;
+if(df<=0){['cd-d','cd-h','cd-m','cd-s'].forEach(id=>document.getElementById(id).textContent='00');return}
+document.getElementById('cd-d').textContent=String(Math.floor(df/864e5)).padStart(2,'0');
+document.getElementById('cd-h').textContent=String(Math.floor(df%864e5/36e5)).padStart(2,'0');
+document.getElementById('cd-m').textContent=String(Math.floor(df%36e5/6e4)).padStart(2,'0');
+document.getElementById('cd-s').textContent=String(Math.floor(df%6e4/1e3)).padStart(2,'0')}
+setInterval(uCD,1e3);uCD();
+
+function setupRv(){const o=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('v')})},{threshold:.12,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv,.rvl,.rvr,.rvs').forEach(el=>o.observe(el))}
+
+function sendWA(){const nm=document.getElementById('gName').value.trim(),mg=document.getElementById('gMsg').value.trim();
+if(!nm){showT('⚠️ Mohon isi nama Anda');return}
+const t=`🌸 *Ucapan untuk Azka & Kirana* 🌸\n\nDari: ${nm}\n\n"${mg||'Semoga menjadi keluarga yang sakinah, mawaddah, warahmah. Aamiin.'}"\n\n_Bismillaahirrahmaanirrahiim_`;
+window.open(`https://wa.me/?text=${encodeURIComponent(t)}`,'_blank');showT('✅ Membuka WhatsApp...')}
+
+function submitRSVP(){const nm=document.getElementById('rName').value.trim(),st=document.getElementById('rStat').value,gu=document.getElementById('rGuest').value;
+if(!nm){showT('⚠️ Mohon isi nama Anda');return}if(!st){showT('⚠️ Pilih konfirmasi kehadiran');return}
+const t=`📋 *Konfirmasi Kehadiran*\n\nNama: ${nm}\nStatus: ${st}${gu?'\nJumlah Tamu: '+gu:''}\n\nUntuk pernikahan Azka & Kirana\n25-26 Juli 2026`;
+window.open(`https://wa.me/?text=${encodeURIComponent(t)}`,'_blank');showT('✅ Terima kasih! Dikirim via WhatsApp')}
+
+function copyClip(t,l){navigator.clipboard.writeText(t).then(()=>showT(`✅ ${l} berhasil disalin!`)).catch(()=>{const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');document.body.removeChild(a);showT(`✅ ${l} berhasil disalin!`)})}
+
+function showT(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800)}
+
+document.addEventListener('DOMContentLoaded',()=>{lucide.createIcons();setupRv()});
+</script>
+</body>
+</html>
